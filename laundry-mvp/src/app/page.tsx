@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import MainLayout from "@/components/layout/MainLayout"
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
@@ -5,6 +6,7 @@ import { Heading } from "@/components/ui/heading"
 import { Icon } from "@/components/ui/icon"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import Link from "next/link"
 import {
   Sparkles,
   Truck,
@@ -13,8 +15,12 @@ import {
   Leaf,
   Star,
   MapPin,
-  Shirt as ShirtIcon
+  Shirt as ShirtIcon,
+  Heart
 } from "lucide-react"
+import { generatePageSEO } from '@/lib/seo'
+
+export const metadata: Metadata = generatePageSEO('home')
 
 export default function Home() {
   return (
@@ -34,6 +40,8 @@ export default function Home() {
         <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
         <div className="absolute bottom-20 right-10 w-32 h-32 bg-laundry-light-blue/20 rounded-full blur-xl"></div>
         <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-laundry-orange/20 rounded-full blur-lg"></div>
+
+
         
         <Container variant="page" className="relative z-10 py-24 lg:py-32">
           <div className="max-w-5xl mx-auto text-center">
@@ -73,13 +81,17 @@ export default function Home() {
             
             {/* Call-to-Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button variant="laundry-secondary" size="lg" className="text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <Icon icon={Clock} className="h-5 w-5 mr-2" />
-                Book Now - Same Day Service
-              </Button>
-              <Button variant="laundry-outline" size="lg" className="text-lg px-8 py-4 border-2 hover:bg-white hover:text-laundry-blue transition-all duration-300">
-                View Our Services
-              </Button>
+              <Link href="/book">
+                <Button variant="laundry-secondary" size="lg" className="text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                  <Icon icon={Clock} className="h-5 w-5 mr-2" />
+                  Book Now - Same Day Service
+                </Button>
+              </Link>
+              <Link href="/services">
+                <Button variant="laundry-outline" size="lg" className="text-lg px-8 py-4 border-2 hover:bg-white hover:text-laundry-blue transition-all duration-300">
+                  View Our Services
+                </Button>
+              </Link>
             </div>
             
             {/* Trust Indicators */}
@@ -162,6 +174,8 @@ export default function Home() {
 
       {/* Services Showcase Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+
+
         <Container variant="page">
           <div className="text-center mb-16">
             <Badge variant="service-tag" className="mb-4">
@@ -393,12 +407,186 @@ export default function Home() {
               Book your first service today and experience the difference of professional laundry care.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="laundry-primary" size="lg">
-                Book Now
-              </Button>
-              <Button variant="laundry-outline" size="lg">
-                View Full Pricing
-              </Button>
+              <Link href="/book">
+                <Button variant="laundry-primary" size="lg">
+                  Book Now
+                </Button>
+              </Link>
+              <Link href="/pricing">
+                <Button variant="laundry-outline" size="lg">
+                  View Full Pricing
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* NDIS Laundry Services Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+
+
+        <Container variant="page">
+          <div className="text-center mb-16">
+            <Badge variant="premium" className="mb-4">
+              <Heart className="h-4 w-4 mr-2" />
+              NDIS Approved Provider
+            </Badge>
+            <Heading variant="section" size="4xl" className="mb-6">
+              NDIS Laundry Services
+            </Heading>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Supporting NDIS participants and their families with professional laundry services. 
+              We understand the unique needs of our community and provide compassionate, reliable care.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            {/* NDIS Content */}
+            <div>
+              <Heading variant="card" size="2xl" className="mb-6 text-blue-900">
+                Professional Laundry Care for NDIS Participants
+              </Heading>
+              
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="p-2 bg-blue-100 rounded-lg">
+                    <Icon icon={Shield} className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-2">NDIS Approved Provider</h3>
+                    <p className="text-gray-600">
+                      We are an approved NDIS provider, ensuring our services meet the highest standards 
+                      of care and support for participants and their families.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="p-2 bg-green-100 rounded-lg">
+                    <Icon icon={Truck} className="h-6 w-6 text-green-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-2">Convenient Pickup & Delivery</h3>
+                    <p className="text-gray-600">
+                      Free pickup and delivery service eliminates the need to travel, making laundry 
+                      management easier for NDIS participants and their support networks.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="p-2 bg-purple-100 rounded-lg">
+                    <Icon icon={Clock} className="h-6 w-6 text-purple-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-2">Flexible Scheduling</h3>
+                    <p className="text-gray-600">
+                      We work around your schedule and NDIS plan requirements, providing flexible 
+                      pickup and delivery times that suit your needs.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="p-2 bg-orange-100 rounded-lg">
+                    <Icon icon={Star} className="h-6 w-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-2">Specialized Care</h3>
+                    <p className="text-gray-600">
+                      Understanding of specific laundry needs, including sensitive skin requirements, 
+                      special fabric care, and medical garment cleaning.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <Link href="/book">
+                  <Button variant="laundry-primary" size="lg" className="w-full sm:w-auto">
+                    Book NDIS Service
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button variant="laundry-outline" size="lg" className="w-full sm:w-auto">
+                    Contact NDIS Team
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* NDIS Benefits Card */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 border border-blue-100">
+              <div className="text-center mb-8">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Heart className="h-10 w-10 text-white" />
+                </div>
+                <Heading variant="card" size="xl" className="text-blue-900">
+                  NDIS Benefits
+                </Heading>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3 p-4 bg-blue-50 rounded-lg">
+                  <Icon icon={Shield} className="h-5 w-5 text-blue-600" />
+                  <span className="text-gray-700">NDIS Plan Management Support</span>
+                </div>
+                
+                <div className="flex items-center space-x-3 p-4 bg-green-50 rounded-lg">
+                  <Icon icon={Truck} className="h-5 w-5 text-green-600" />
+                  <span className="text-gray-700">Free Pickup & Delivery</span>
+                </div>
+                
+                <div className="flex items-center space-x-3 p-4 bg-purple-50 rounded-lg">
+                  <Icon icon={Clock} className="h-5 w-5 text-purple-600" />
+                  <span className="text-gray-700">Flexible Scheduling</span>
+                </div>
+                
+                <div className="flex items-center space-x-3 p-4 bg-orange-50 rounded-lg">
+                  <Icon icon={Star} className="h-5 w-5 text-orange-600" />
+                  <span className="text-gray-700">Specialized Care</span>
+                </div>
+                
+                <div className="flex items-center space-x-3 p-4 bg-indigo-50 rounded-lg">
+                  <Icon icon={Leaf} className="h-5 w-5 text-indigo-600" />
+                  <span className="text-gray-700">Eco-Friendly Process</span>
+                </div>
+              </div>
+
+              <div className="mt-8 p-4 bg-blue-100 rounded-lg">
+                <p className="text-sm text-blue-900 text-center">
+                  <strong>NDIS Funding Available</strong><br />
+                  Our services can be funded through your NDIS plan under 
+                  Core Supports - Assistance with Daily Life
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* NDIS Testimonial */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 border border-blue-200">
+            <div className="text-center mb-6">
+              <div className="flex items-center justify-center mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Icon key={i} icon={Star} className="h-6 w-6 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <blockquote className="text-xl text-gray-700 italic mb-6">
+                "LaundryPro has been a lifesaver for our family. As NDIS participants, we need reliable, 
+                understanding service providers, and they deliver exactly that. The pickup and delivery 
+                service makes managing our laundry so much easier."
+              </blockquote>
+              <div className="flex items-center justify-center space-x-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                  MW
+                </div>
+                <div className="text-left">
+                  <div className="font-semibold text-gray-900">Michael Wilson</div>
+                  <div className="text-sm text-gray-600">NDIS Participant & Family</div>
+                  <div className="text-xs text-blue-600">Verified NDIS Customer</div>
+                </div>
+              </div>
             </div>
           </div>
         </Container>
@@ -546,9 +734,11 @@ export default function Home() {
                 Experience the difference of professional laundry care. Book your first service today!
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="laundry-primary" size="lg">
+                              <Link href="/book?first-time=true">
+                <Button variant="laundry-first-time" size="lg" className="text-lg px-8 py-4">
                   Book Your First Service
                 </Button>
+              </Link>
                 <Button variant="laundry-outline" size="lg">
                   Read More Reviews
                 </Button>
@@ -802,12 +992,16 @@ export default function Home() {
               Join thousands of satisfied customers who trust LaundryPro for their garment care needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="laundry-primary" size="lg" className="text-lg px-8 py-4">
-                Start Your First Order
-              </Button>
-              <Button variant="laundry-outline" size="lg" className="text-lg px-8 py-4">
-                Learn More About Us
-              </Button>
+              <Link href="/book?first-time=true">
+                <Button variant="laundry-first-time" size="lg" className="text-lg px-8 py-4">
+                  Start Your First Order
+                </Button>
+              </Link>
+              <Link href="/about">
+                <Button variant="laundry-outline" size="lg" className="text-lg px-8 py-4">
+                  Learn More About Us
+                </Button>
+              </Link>
             </div>
           </div>
         </Container>

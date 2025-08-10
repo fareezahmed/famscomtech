@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Container } from "@/components/ui/container"
 import { Icon } from "@/components/ui/icon"
 import { Separator } from "@/components/ui/separator"
+import { Badge } from "@/components/ui/badge"
 import { 
   Phone, 
   Mail, 
@@ -11,7 +12,8 @@ import {
   Facebook, 
   Instagram, 
   Twitter,
-  Shirt as ShirtIcon
+  Shirt as ShirtIcon,
+  Heart
 } from "lucide-react"
 
 const navigation = {
@@ -53,7 +55,7 @@ export default function Footer() {
               <span className="text-xl font-bold">LaundryPro</span>
             </div>
             <p className="text-gray-300 mb-6">
-              Professional laundry and dry cleaning services in Sydney. 
+              Professional laundry and dry cleaning services in Melbourne. 
               Quality care for your clothes, delivered to your door.
             </p>
             <div className="space-y-2 text-sm text-gray-300">
@@ -67,7 +69,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4 text-laundry-blue" />
-                <span>Sydney, NSW</span>
+                <span>Melbourne, VIC</span>
               </div>
             </div>
           </div>
@@ -140,9 +142,11 @@ export default function Footer() {
               </div>
             </div>
 
-            <Button variant="laundry-primary" className="w-full">
-              Book Now
-            </Button>
+            <Link href="/book" className="w-full">
+              <Button variant="laundry-primary" className="w-full">
+                Book Now
+              </Button>
+            </Link>
           </div>
         </div>
 
@@ -155,6 +159,12 @@ export default function Footer() {
           </div>
           
           <div className="flex items-center space-x-4">
+            {/* NDIS Badge */}
+            <Badge variant="premium" className="flex items-center space-x-1 bg-blue-600 hover:bg-blue-700 text-white border-0">
+              <Icon icon={Heart} className="h-3 w-3" />
+              <span className="text-xs font-medium">We Love NDIS</span>
+            </Badge>
+            
             <div className="flex space-x-4">
               {socialLinks.map((item) => (
                 <Link

@@ -23,6 +23,7 @@ const buttonVariants = cva(
         "laundry-secondary": "bg-green-600 text-white hover:bg-green-700 shadow-lg",
         "laundry-outline": "border-2 border-blue-600 text-blue-600 hover:bg-blue-50",
         "laundry-ghost": "text-blue-600 hover:bg-blue-50",
+        "laundry-first-time": "bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 shadow-lg transform hover:scale-105 transition-all duration-200",
       },
       size: {
         default: "h-10 px-4 py-2",
