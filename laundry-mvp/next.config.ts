@@ -1,8 +1,15 @@
 /** @type {import('next').NextConfig} */
 const repo = "famscomtech"; // e.g., laundry-mvp
-module.exports = {
-  output: "export", // enable static export
-  basePath: `/${repo}`,
-  assetPrefix: `/${repo}/`,
+
+const nextConfig: any = {
   images: { unoptimized: true }, // GitHub Pages doesn't run Image Optimization
 };
+
+// Only apply basePath and output export for production builds
+if (process.env.NODE_ENV === 'production') {
+  nextConfig.output = "export";
+  nextConfig.basePath = `/${repo}`;
+  nextConfig.assetPrefix = `/${repo}/`;
+}
+
+module.exports = nextConfig;

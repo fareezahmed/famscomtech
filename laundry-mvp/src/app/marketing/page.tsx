@@ -1,7 +1,7 @@
-import Hero from "@/components/marketing/Hero";
-import Steps from "@/components/marketing/Steps";
-import PricingTable from "@/components/marketing/PricingTable";
-import Section from "@/components/common/Section";
+import Hero from "@/components/sections/Hero";
+import Steps from "@/components/sections/Steps";
+import PricingTable from "@/components/sections/PricingTable";
+import Section from "@/components/layout/Section";
 
 export default function HomePage() {
   return (
