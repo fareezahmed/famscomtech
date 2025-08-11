@@ -31,11 +31,16 @@ const nextConfig: any = {
   }),
 };
 
-// Only apply basePath and output export for production builds
+// Only apply output export for production builds
 if (process.env.NODE_ENV === 'production') {
   nextConfig.output = "export";
-  nextConfig.basePath = `/${repo}`;
-  nextConfig.assetPrefix = `/${repo}/`;
+  // For GitHub Pages, we don't set basePath or assetPrefix
+  // Static assets should be served from root
+  
+  // Ensure trailing slashes for better static hosting compatibility
+  nextConfig.trailingSlash = true;
+  
+  // Note: We'll handle the _next folder renaming in the build script
 }
 
 module.exports = nextConfig;
