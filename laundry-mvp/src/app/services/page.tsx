@@ -184,11 +184,12 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
             {services.map((service) => {
-              const IconComponent = {
+              const iconMap = {
                 Shirt,
                 Sparkles,
                 Zap
-              }[service.iconName as keyof typeof IconComponent];
+              };
+              const IconComponent = iconMap[service.iconName as keyof typeof iconMap];
               
               return (
                 <Card key={service.id} variant="service-card" className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
@@ -272,12 +273,13 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {additionalServices.map((service) => {
-              const IconComponent = {
+              const iconMap = {
                 Clock,
                 Heart,
                 Shield,
                 Star
-              }[service.iconName as keyof typeof IconComponent];
+              };
+              const IconComponent = iconMap[service.iconName as keyof typeof iconMap];
               
               return (
                 <Card key={service.id} variant="feature-card" className="text-center p-6 group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">

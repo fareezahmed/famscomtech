@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { Suspense } from 'react'
 import MainLayout from '@/components/layout/MainLayout'
 import { Container } from '@/components/ui/container'
 import { Heading } from '@/components/ui/heading'
@@ -34,7 +35,9 @@ export default function BookPage() {
               {/* Booking Form */}
               <div className="lg:col-span-2">
                 <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-                  <BookFormWrapper />
+                  <Suspense fallback={<div className="text-center py-8">Loading booking form...</div>}>
+                    <BookFormWrapper />
+                  </Suspense>
                 </div>
               </div>
               

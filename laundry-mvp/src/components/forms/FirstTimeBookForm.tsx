@@ -221,12 +221,12 @@ export default function FirstTimeBookForm() {
       }
     } else if (currentStep === 2) {
       // Step 2: Personal information
-      const step2Fields = ["name", "phone", "email"];
-      canProceed = await trigger(step2Fields);
+      const step2Fields = ["name", "phone", "email"] as const;
+      canProceed = await trigger(step2Fields as any);
     } else if (currentStep === 3) {
       // Step 3: Pickup information
-      const step3Fields = ["address", "suburb", "quantity", "pickupDate", "pickupTime"];
-      canProceed = await trigger(step3Fields);
+      const step3Fields = ["address", "suburb", "quantity", "pickupDate", "pickupTime"] as const;
+      canProceed = await trigger(step3Fields as any);
     }
     
     if (canProceed && currentStep < 4) {
@@ -463,7 +463,7 @@ export default function FirstTimeBookForm() {
             </div>
             <div>
               <Label htmlFor="suburb">Suburb *</Label>
-              <Select onValueChange={(value) => setValue("suburb", value)}>
+              <Select onValueChange={(value) => setValue("suburb", value as any)}>
                 <SelectTrigger className={errors.suburb ? "border-red-500" : ""}>
                   <SelectValue placeholder="Select your suburb" />
                 </SelectTrigger>
@@ -508,7 +508,7 @@ export default function FirstTimeBookForm() {
             </div>
             <div>
               <Label htmlFor="pickupTime">Pickup Time *</Label>
-              <Select onValueChange={(value) => setValue("pickupTime", value)}>
+              <Select onValueChange={(value) => setValue("pickupTime", value as any)}>
                 <SelectTrigger className={errors.pickupTime ? "border-red-500" : ""}>
                   <SelectValue placeholder="Select pickup time" />
                 </SelectTrigger>

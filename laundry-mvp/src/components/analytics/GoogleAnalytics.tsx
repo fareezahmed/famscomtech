@@ -2,6 +2,16 @@
 
 import Script from 'next/script'
 
+// Declare gtag function type
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+    dataLayer: any[];
+  }
+}
+
+const gtag = typeof window !== 'undefined' ? window.gtag : undefined;
+
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-XXXXXXXXXX'
 
 export function GoogleAnalytics() {

@@ -13,7 +13,7 @@ const inputVariants = cva(
         "contact-form": "border-gray-200 focus-visible:ring-gray-500",
         "search": "border-gray-200 focus-visible:ring-blue-500",
       },
-      size: {
+      inputSize: {
         default: "h-10",
         sm: "h-8 text-xs",
         lg: "h-12 text-base",
@@ -22,7 +22,7 @@ const inputVariants = cva(
     },
     defaultVariants: {
       variant: "default",
-      size: "default",
+      inputSize: "default",
     },
   }
 )
@@ -32,11 +32,11 @@ export interface InputProps
     VariantProps<typeof inputVariants> {}
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, variant, size, ...props }, ref) => {
+  ({ className, type, variant, inputSize, ...props }, ref) => {
     return (
       <input
         type={type}
-        className={cn(inputVariants({ variant, size, className }))}
+        className={cn(inputVariants({ variant, inputSize, className }))}
         ref={ref}
         {...props}
       />

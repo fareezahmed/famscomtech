@@ -1,6 +1,15 @@
 'use client'
 
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+    dataLayer: any[];
+  }
+}
+
 import { useEffect } from 'react'
+
+const gtag = typeof window !== 'undefined' ? window.gtag : undefined;
 
 interface PerformanceMetrics {
   FCP: number // First Contentful Paint
@@ -61,13 +70,14 @@ export function PerformanceMonitor() {
       const fidObserver = new PerformanceObserver((list) => {
         const entries = list.getEntries()
         entries.forEach((entry) => {
-          console.log('FID:', entry.processingStart - entry.startTime)
+          const fidEntry = entry as PerformanceEventTiming;
+          console.log('FID:', fidEntry.processingStart - fidEntry.startTime)
           
           if (typeof gtag !== 'undefined') {
             gtag('event', 'web_vitals', {
               event_category: 'Web Vitals',
               event_label: 'FID',
-              value: Math.round(entry.processingStart - entry.startTime),
+              value: Math.round(fidEntry.processingStart - fidEntry.startTime),
             })
           }
         })

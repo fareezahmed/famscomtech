@@ -89,9 +89,7 @@ export const bookingSchema = z.object({
     .min(10, "Address must be at least 10 characters")
     .max(200, "Address must be less than 200 characters"),
   
-  suburb: z.enum(serviceAreas, {
-    errorMap: () => ({ message: "Please select a valid service area" })
-  }),
+  suburb: z.enum(serviceAreas),
   
   service: z.string()
     .min(1, "Please select a service"),
@@ -111,9 +109,7 @@ export const bookingSchema = z.object({
       return selectedDate >= today;
     }, "Pickup date cannot be in the past"),
   
-  pickupTime: z.enum(timeSlots, {
-    errorMap: () => ({ message: "Please select a valid pickup time" })
-  }),
+  pickupTime: z.enum(timeSlots),
   
   specialInstructions: z.string()
     .max(500, "Special instructions must be less than 500 characters")

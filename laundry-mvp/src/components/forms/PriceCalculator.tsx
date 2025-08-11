@@ -214,7 +214,8 @@ export default function PriceCalculator({
       )}
 
       {selectedService && (
-        <div className="space-y-4">
+        <>
+          <div className="space-y-4">
           <div>
             <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
               <DollarSign className="h-5 w-5 mr-2" />
@@ -324,6 +325,7 @@ export default function PriceCalculator({
               </CardContent>
             </Card>
           </div>
+        </div>
         </>
       )}
 

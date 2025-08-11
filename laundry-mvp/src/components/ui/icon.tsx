@@ -44,13 +44,14 @@ export interface IconProps
 
 const Icon = React.forwardRef<HTMLDivElement, IconProps>(
   ({ className, variant, size, icon: IconComponent, ...props }, ref) => {
+    const IconComponentTyped: LucideIcon = IconComponent;
     return (
       <div
         ref={ref}
         className={cn(iconVariants({ variant, size, className }))}
         {...props}
       >
-        <IconComponent className="h-full w-full" />
+        <IconComponentTyped className="h-full w-full" />
       </div>
     )
   }

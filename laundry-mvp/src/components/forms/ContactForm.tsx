@@ -34,21 +34,15 @@ const contactSchema = z.object({
     "Complaint",
     "Feedback",
     "Other"
-  ], {
-    errorMap: () => ({ message: "Please select a subject" })
-  }),
+  ]),
   
   message: z.string()
     .min(10, "Message must be at least 10 characters")
     .max(1000, "Message must be less than 1000 characters"),
   
-  preferredContact: z.enum(["email", "phone"], {
-    errorMap: () => ({ message: "Please select preferred contact method" })
-  }),
+  preferredContact: z.enum(["email", "phone"]),
   
-  urgency: z.enum(["low", "medium", "high"], {
-    errorMap: () => ({ message: "Please select urgency level" })
-  })
+  urgency: z.enum(["low", "medium", "high"])
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;

@@ -271,14 +271,15 @@ export default function SustainabilityPage() {
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {ecoPractices.map((practice, index) => {
-                  const IconComponent = {
+                  const iconMap = {
                     Recycle,
                     Zap,
                     Leaf,
                     Droplets,
                     TreePine,
                     Globe
-                  }[practice.iconName as keyof typeof IconComponent];
+                  };
+                  const IconComponent = iconMap[practice.iconName as keyof typeof iconMap];
                   
                   return (
                     <Card key={index} className="hover:shadow-lg transition-shadow">
@@ -317,12 +318,13 @@ export default function SustainabilityPage() {
               
                              <div className="grid md:grid-cols-2 gap-8">
                  {certifications.map((cert, index) => {
-                   const IconComponent = {
+                   const iconMap = {
                      Award,
                      Shield,
                      Droplets,
                      Leaf
-                   }[cert.iconName as keyof typeof IconComponent];
+                   };
+                   const IconComponent = iconMap[cert.iconName as keyof typeof iconMap];
                    
                    return (
                     <Card key={index} className="hover:shadow-lg transition-shadow">

@@ -327,7 +327,7 @@ export default function BookForm() {
             </div>
             <div>
               <Label htmlFor="suburb">Suburb *</Label>
-              <Select onValueChange={(value) => setValue("suburb", value)}>
+              <Select onValueChange={(value) => setValue("suburb", value as any)}>
                 <SelectTrigger className={errors.suburb ? "border-red-500" : ""}>
                   <SelectValue placeholder="Select your suburb" />
                 </SelectTrigger>
@@ -400,7 +400,7 @@ export default function BookForm() {
             </div>
             <div>
               <Label htmlFor="pickupTime">Pickup Time *</Label>
-              <Select onValueChange={(value) => setValue("pickupTime", value)}>
+              <Select onValueChange={(value) => setValue("pickupTime", value as any)}>
                 <SelectTrigger className={errors.pickupTime ? "border-red-500" : ""}>
                   <SelectValue placeholder="Select pickup time" />
                 </SelectTrigger>

@@ -200,14 +200,15 @@ export default function AboutPage() {
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {values.map((value, index) => {
-                  const IconComponent = {
+                  const iconMap = {
                     Heart,
                     Shield,
                     Leaf,
                     Clock,
                     Users,
                     Award
-                  }[value.iconName as keyof typeof IconComponent];
+                  };
+                  const IconComponent = iconMap[value.iconName as keyof typeof iconMap];
                   
                   return (
                     <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">

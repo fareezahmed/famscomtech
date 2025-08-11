@@ -155,7 +155,6 @@ export function PWARegistration() {
         body: 'Thank you for installing our app! We\'ll keep you updated with the latest offers.',
         icon: '/icons/icon-192x192.png',
         badge: '/icons/icon-72x72.png',
-        vibrate: [100, 50, 100],
         data: {
           url: '/'
         }

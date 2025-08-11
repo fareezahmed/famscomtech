@@ -227,12 +227,13 @@ export default function AreasPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {deliveryFeatures.map((feature, index) => {
-              const IconComponent = {
+              const iconMap = {
                 Truck,
                 Clock,
                 CheckCircle,
                 Navigation
-              }[feature.iconName as keyof typeof IconComponent];
+              };
+              const IconComponent = iconMap[feature.iconName as keyof typeof iconMap];
               
               return (
                 <Card key={index} variant="feature-card" className="p-6">
