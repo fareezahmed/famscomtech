@@ -42,27 +42,29 @@ Write-Host "Build successful!" -ForegroundColor Green
 # Verify that all expected pages were generated
 Write-Host "Verifying static pages..." -ForegroundColor Blue
 $expectedPages = @(
-    "index.html",
-    "about.html", 
-    "admin.html",
-    "areas.html",
-    "book.html",
-    "contact.html",
-    "design-system.html",
-    "faq.html",
-    "marketing.html",
-    "pricing.html",
-    "pwa.html",
-    "services.html",
-    "sustainability.html",
-    "404.html"
+    @{Name="index.html"; Path="out\index.html"},
+    @{Name="about"; Path="out\about\index.html"}, 
+    @{Name="admin"; Path="out\admin\index.html"},
+    @{Name="areas"; Path="out\areas\index.html"},
+    @{Name="book"; Path="out\book\index.html"},
+    @{Name="complaints"; Path="out\complaints\index.html"},
+    @{Name="contact"; Path="out\contact\index.html"},
+    @{Name="design-system"; Path="out\design-system\index.html"},
+    @{Name="faq"; Path="out\faq\index.html"},
+    @{Name="help"; Path="out\help\index.html"},
+    @{Name="marketing"; Path="out\marketing\index.html"},
+    @{Name="pricing"; Path="out\pricing\index.html"},
+    @{Name="pwa"; Path="out\pwa\index.html"},
+    @{Name="services"; Path="out\services\index.html"},
+    @{Name="sustainability"; Path="out\sustainability\index.html"},
+    @{Name="404.html"; Path="out\404.html"}
 )
 
 foreach ($page in $expectedPages) {
-    if (Test-Path "out\$page") {
-        Write-Host "✓ $page" -ForegroundColor Green
+    if (Test-Path $page.Path) {
+        Write-Host "✓ $($page.Name)" -ForegroundColor Green
     } else {
-        Write-Host "✗ $page (missing)" -ForegroundColor Red
+        Write-Host "✗ $($page.Name) (missing)" -ForegroundColor Red
     }
 }
 
@@ -74,14 +76,14 @@ if (Test-Path "out\_next") {
     Move-Item "out\_next" "out\static" -Force
     Write-Host "Renamed _next to static" -ForegroundColor Green
     
-    # Update all HTML files to reference 'static' instead of '_next'
-    Write-Host "Updating HTML files to reference 'static' folder..." -ForegroundColor Blue
-    Get-ChildItem "out\*.html" | ForEach-Object {
+    # Update all files to reference 'static' instead of '_next'
+    Write-Host "Updating files to reference 'static' folder..." -ForegroundColor Blue
+    Get-ChildItem "out" -Recurse -Include "*.html", "*.txt", "*.js", "*.css" | ForEach-Object {
         $content = Get-Content $_.FullName -Raw
         $updatedContent = $content -replace '/_next/', '/static/'
         Set-Content $_.FullName $updatedContent -NoNewline
     }
-    Write-Host "Updated HTML files" -ForegroundColor Green
+    Write-Host "Updated files" -ForegroundColor Green
 } else {
     Write-Host "Warning: _next folder not found" -ForegroundColor Yellow
 }

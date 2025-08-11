@@ -159,7 +159,8 @@ export default function FirstTimeBookForm() {
     setErrorMessage("");
 
     try {
-      const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT as string;
+      // Use the Formspree endpoint directly for now
+      const endpoint = "https://formspree.io/f/mrblrgjq";
 
       if (!endpoint) {
         throw new Error("Form submission endpoint not configured");

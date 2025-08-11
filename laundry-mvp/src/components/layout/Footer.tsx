@@ -21,7 +21,6 @@ const navigation = {
     { name: "Dry Cleaning", href: "/services/dry-cleaning" },
     { name: "Laundry", href: "/services/laundry" },
     { name: "Ironing", href: "/services/ironing" },
-    { name: "Express Service", href: "/services/express" },
   ],
   company: [
     { name: "About Us", href: "/about" },
@@ -32,7 +31,6 @@ const navigation = {
   support: [
     { name: "FAQ", href: "/faq" },
     { name: "Booking Help", href: "/help" },
-    { name: "Track Order", href: "/track" },
     { name: "Complaints", href: "/complaints" },
   ],
 }
