@@ -1,7 +1,7 @@
 {
-  "name": "FamsComTech Laundry Services",
-  "short_name": "FamsComTech",
-  "description": "Professional laundry and dry cleaning services in Sydney. Quality care for your clothes, delivered to your door.",
+  "name": "Ultra Cleany Laundry",
+  "short_name": "Ultra Cleany",
+  "description": "Professional laundry services in Melbourne. Quality care for your clothes, delivered to your door.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
