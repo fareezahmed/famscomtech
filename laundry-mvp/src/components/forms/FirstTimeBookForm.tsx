@@ -13,7 +13,7 @@ import { Icon } from "@/components/ui/icon";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import {
-  Shirt, Sparkles, Zap, Clock, Heart, Shield, Star, Calendar, MapPin, User, Phone, Mail, Package, CheckCircle, AlertCircle, Gift, Sparkles as SparklesIcon, Award, Truck
+  Shirt, Sparkles, Zap, Clock, Heart, Shield, Star, Calendar, MapPin, User, Phone, Mail, Package, CheckCircle, AlertCircle, Gift, Sparkles as SparklesIcon, Award, Truck, Bed, Briefcase
 } from "lucide-react";
 import React from "react";
 import BookingConfirmation from "./BookingConfirmation";
@@ -21,80 +21,69 @@ import BookingConfirmation from "./BookingConfirmation";
 // Service data for first-time customers with special offers
 const firstTimeServices = [
   { 
-    id: 'dry-cleaning', 
-    title: 'Dry Cleaning', 
-    description: 'Professional dry cleaning for delicate fabrics', 
-    icon: Shirt, 
-    color: 'laundry-blue', 
-    price: '$15', 
-    originalPrice: '$20',
-    unit: 'per item',
-    offer: '25% OFF First Order'
-  },
-  { 
-    id: 'laundry', 
-    title: 'Laundry Service', 
-    description: 'Wash, dry & fold with premium detergents', 
+    id: 'everyday-laundry', 
+    title: 'Everyday Laundry Bundle', 
+    description: '5kg minimum (wash, dry, fold), +$5.50 per extra kg', 
     icon: Sparkles, 
     color: 'laundry-green', 
-    price: '$25', 
+    price: '$27', 
     originalPrice: '$30',
-    unit: 'per load',
-    offer: '17% OFF First Order'
+    unit: 'per 5kg',
+    offer: '10% OFF First Wash'
+  },
+  { 
+    id: 'domestic-washing', 
+    title: 'Domestic Washing & Drying', 
+    description: '5kg minimum (no folding), +$5.00 per extra kg', 
+    icon: Package, 
+    color: 'laundry-blue', 
+    price: '$22.50', 
+    originalPrice: '$25',
+    unit: 'per 5kg',
+    offer: '10% OFF First Wash'
+  },
+  { 
+    id: 'commercial-washing', 
+    title: 'Commercial Washing Bundle', 
+    description: '5kg minimum bundle package', 
+    icon: Briefcase, 
+    color: 'laundry-purple', 
+    price: '$31.50', 
+    originalPrice: '$35',
+    unit: 'per 5kg',
+    offer: '10% OFF First Wash'
+  },
+  { 
+    id: 'bedding-bundle', 
+    title: 'Bedding Refresh Bundle', 
+    description: '2 sets of bedding (wash, dry, fold)', 
+    icon: Bed, 
+    color: 'laundry-yellow', 
+    price: '$31.50', 
+    originalPrice: '$35',
+    unit: 'per 2 sets',
+    offer: '10% OFF First Wash'
   },
   { 
     id: 'ironing', 
     title: 'Ironing Service', 
-    description: 'Expert pressing and steam treatment', 
+    description: 'Minimum charge for ironing services', 
     icon: Zap, 
     color: 'laundry-orange', 
-    price: '$10', 
-    originalPrice: '$12',
-    unit: 'per item',
-    offer: '17% OFF First Order'
+    price: '$18', 
+    originalPrice: '$20',
+    unit: 'minimum',
+    offer: '10% OFF First Order'
   },
   { 
     id: 'express', 
     title: 'Express Service', 
     description: 'Same-day turnaround for urgent needs', 
     icon: Clock, 
-    color: 'laundry-purple', 
+    color: 'laundry-red', 
     price: '+$10', 
     unit: 'surcharge',
     offer: 'Free Upgrade'
-  },
-  { 
-    id: 'curtains', 
-    title: 'Curtain Cleaning', 
-    description: 'Professional cleaning for curtains and drapes', 
-    icon: Heart, 
-    color: 'laundry-yellow', 
-    price: '$45', 
-    originalPrice: '$55',
-    unit: 'from',
-    offer: '18% OFF First Order'
-  },
-  { 
-    id: 'rugs', 
-    title: 'Rug Cleaning', 
-    description: 'Deep cleaning for area rugs and carpets', 
-    icon: Shield, 
-    color: 'laundry-red', 
-    price: '$60', 
-    originalPrice: '$75',
-    unit: 'from',
-    offer: '20% OFF First Order'
-  },
-  { 
-    id: 'wedding-dress', 
-    title: 'Wedding Dress', 
-    description: 'Specialized cleaning and preservation', 
-    icon: Star, 
-    color: 'laundry-pink', 
-    price: '$120', 
-    originalPrice: '$150',
-    unit: 'from',
-    offer: '20% OFF First Order'
   }
 ];
 
@@ -337,22 +326,22 @@ export default function FirstTimeBookForm() {
                     <div className="flex items-center space-x-3">
                       <Icon
                         icon={service.icon}
-                        className={`h-6 w-6 text-${service.color}`}
+                        className={`h-6 w-6 text-${service.color} text-2xl`}
                       />
                       <div>
                         <CardTitle className="text-lg">{service.title}</CardTitle>
                         <p className="text-sm text-gray-600">{service.description}</p>
                       </div>
                     </div>
-                    <div className="text-right">
-                      <Badge variant="secondary" className="text-xs mb-1 bg-green-100 text-green-800">
-                        {service.offer}
-                      </Badge>
-                      <div className="text-sm">
-                        <span className="text-gray-400 line-through">{service.originalPrice}</span>
-                        <span className="text-purple-600 font-bold ml-1">{service.price}</span>
-                        <span className="text-gray-500 ml-1">{service.unit}</span>
-                      </div>
+                  </div>
+                  <div className="text-center">
+                    <Badge variant="secondary" className="text-xs mb-1 bg-green-100 text-green-800">
+                      {service.offer}
+                    </Badge>
+                    <div className="text-sm">
+                      <span className="text-gray-400 line-through">{service.originalPrice}</span>
+                      <span className="text-purple-600 font-bold ml-1">{service.price}</span>
+                      <span className="text-gray-500 ml-1">{service.unit}</span>
                     </div>
                   </div>
                 </CardHeader>

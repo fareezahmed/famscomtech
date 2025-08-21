@@ -6,11 +6,11 @@ import FAQSection from '@/components/sections/FAQSection'
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions | FamsComTech Laundry',
-  description: 'Find answers to common questions about our laundry and dry cleaning services. Everything you need to know about booking, pricing, and service areas.',
-  keywords: 'laundry FAQ, dry cleaning questions, laundry service FAQ, booking questions',
+  description: 'Find answers to common questions about our laundry services. Everything you need to know about booking, pricing, and service areas.',
+  keywords: 'laundry FAQ, laundry service FAQ, booking questions',
   openGraph: {
     title: 'Frequently Asked Questions | FamsComTech Laundry',
-    description: 'Find answers to common questions about our laundry and dry cleaning services.',
+          description: 'Find answers to common questions about our laundry services.',
     type: 'website',
   },
 }
@@ -28,7 +28,7 @@ export default function FAQPage() {
               </Heading>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Can't find what you're looking for? We've compiled answers to the most common questions 
-                about our laundry and dry cleaning services.
+                about our laundry services.
               </p>
             </div>
 
@@ -52,10 +52,10 @@ export default function FAQPage() {
                     Contact Us
                   </a>
                   <a
-                    href="tel:1300-LAUNDRY"
+                    href="tel:0395711494"
                     className="inline-flex items-center justify-center px-6 py-3 border border-laundry-blue text-base font-medium rounded-lg text-laundry-blue bg-white hover:bg-gray-50 transition-colors duration-200"
                   >
-                    Call 1300-LAUNDRY
+                                          Call (03) 9571 1494
                   </a>
                 </div>
               </div>

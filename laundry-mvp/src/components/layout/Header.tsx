@@ -89,11 +89,11 @@ export default function Header() {
             <div className="flex items-center space-x-6 text-sm text-gray-600">
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span>1300 123 456</span>
+                <span>(03) 9571 1494</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
-                <span>Melbourne Area</span>
+                <span>Malvern East, VIC</span>
               </div>
             </div>
             <Link href="/book">

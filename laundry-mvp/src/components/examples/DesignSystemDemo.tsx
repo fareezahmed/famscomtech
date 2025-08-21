@@ -214,7 +214,6 @@ export function DesignSystemDemo() {
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="dry-cleaning">Dry Cleaning</SelectItem>
                   <SelectItem value="laundry">Laundry</SelectItem>
                   <SelectItem value="ironing">Ironing</SelectItem>
                   <SelectItem value="express">Express Service</SelectItem>
@@ -241,7 +240,7 @@ export function DesignSystemDemo() {
             Badges
           </Heading>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Badge variant="service-tag">Dry Cleaning</Badge>
+            <Badge variant="service-tag">Laundry</Badge>
             <Badge variant="pricing">$15.99</Badge>
             <Badge variant="feature">Express Service</Badge>
             <Badge variant="status-pending">Pending</Badge>

@@ -18,38 +18,27 @@ import {
   Calculator,
   Package,
   CheckCircle,
-  DollarSign
+  DollarSign,
+  Bed,
+  Briefcase
 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Pricing - LaundryPro',
-  description: 'Transparent pricing for all our laundry and dry cleaning services. Competitive rates, package deals, and express options available.',
-  keywords: 'laundry pricing, dry cleaning prices, ironing service cost, express service pricing',
+      title: 'Pricing - Ultra Cleany Laundry',
+  description: 'Transparent pricing for all our laundry services. Competitive rates, package deals, and express options available.',
+  keywords: 'laundry pricing, ironing service cost, express service pricing, bundle packages',
 }
 
 const serviceCategories = [
   {
-    title: 'Dry Cleaning',
-    icon: Shirt,
-    color: 'laundry-blue',
-    items: [
-      { name: 'Shirts & Blouses', price: '$12', description: 'Business shirts, casual shirts, blouses' },
-      { name: 'Pants & Trousers', price: '$15', description: 'Dress pants, khakis, slacks' },
-      { name: 'Suits (2-piece)', price: '$35', description: 'Jacket and pants together' },
-      { name: 'Dresses', price: '$25', description: 'Casual and formal dresses' },
-      { name: 'Coats & Jackets', price: '$30', description: 'Winter coats, blazers, jackets' },
-      { name: 'Skirts', price: '$18', description: 'All types of skirts' }
-    ]
-  },
-  {
-    title: 'Laundry Service',
+    title: 'Laundry Services',
     icon: Sparkles,
     color: 'laundry-green',
     items: [
-      { name: 'Small Load', price: '$20', description: 'Up to 15 items' },
-      { name: 'Regular Load', price: '$25', description: 'Up to 25 items (Most Popular)' },
-      { name: 'Large Load', price: '$35', description: 'Up to 40 items' },
-      { name: 'Bulk Laundry', price: '$45', description: 'Up to 60 items' }
+      { name: 'Everyday Laundry Bundle', price: '$30', description: '5kg minimum (wash, dry, fold), +$5.50 per extra kg' },
+      { name: 'Domestic Washing & Drying', price: '$25', description: '5kg minimum, +$5.00 per extra kg (No folding)' },
+      { name: 'Commercial Washing Bundle', price: '$35', description: '5kg minimum bundle package' },
+      { name: 'Bedding Refresh Bundle', price: '$35', description: '2 sets of bedding (wash, dry, fold)' }
     ]
   },
   {
@@ -57,6 +46,7 @@ const serviceCategories = [
     icon: Zap,
     color: 'laundry-orange',
     items: [
+      { name: 'Minimum Ironing Service', price: '$20', description: 'Minimum charge for ironing services' },
       { name: 'Shirts & Blouses', price: '$8', description: 'Business shirts, casual shirts, blouses' },
       { name: 'Pants & Trousers', price: '$10', description: 'Dress pants, khakis, slacks' },
       { name: 'Dresses', price: '$15', description: 'Casual and formal dresses' },
@@ -75,80 +65,55 @@ const specialtyServices = [
     price: '+$10',
     description: 'Same-day turnaround for urgent needs',
     features: ['Priority processing', 'Same-day service', 'Premium care', 'Urgent handling']
-  },
-  {
-    title: 'Curtain Cleaning',
-    icon: Heart,
-    color: 'laundry-yellow',
-    price: 'From $45',
-    description: 'Professional cleaning for curtains and drapes',
-    features: ['Gentle cleaning', 'Fabric protection', 'Professional handling', 'Expert finishing']
-  },
-  {
-    title: 'Rug Cleaning',
-    icon: Shield,
-    color: 'laundry-red',
-    price: 'From $60',
-    description: 'Deep cleaning for area rugs and carpets',
-    features: ['Deep cleaning', 'Stain removal', 'Fabric protection', 'Professional drying']
-  },
-  {
-    title: 'Wedding Dress',
-    icon: Star,
-    color: 'laundry-pink',
-    price: 'From $120',
-    description: 'Specialized cleaning and preservation',
-    features: ['Specialized cleaning', 'Preservation treatment', 'Expert handling', 'Storage packaging']
   }
 ]
 
 const packageDeals = [
   {
-    title: 'Business Package',
-    icon: Package,
+    title: 'Work Week Special Bundle',
+    icon: Briefcase,
     color: 'laundry-blue',
-    price: '$85',
-    originalPrice: '$105',
-    savings: '$20',
-    description: 'Perfect for business professionals',
+    price: '$42',
+    originalPrice: '$50',
+    savings: '$8',
+    description: 'Perfect for working professionals',
     includes: [
-      '5 Business Shirts',
-      '3 Pairs of Pants',
-      '1 Suit (2-piece)',
+      '5kg wash, dry & fold',
+      '5 work shirts ironed',
       'Free pickup & delivery',
       '24-hour turnaround'
     ]
   },
   {
-    title: 'Family Package',
-    icon: Heart,
+    title: 'Everyday Laundry Bundle',
+    icon: Package,
     color: 'laundry-green',
-    price: '$120',
-    originalPrice: '$150',
-    savings: '$30',
-    description: 'Great for families',
+    price: '$30',
+    originalPrice: '$35',
+    savings: '$5',
+    description: 'Most popular choice for regular laundry',
     includes: [
-      '2 Large Laundry Loads',
-      '5 Shirts Ironing',
-      '3 Pairs of Pants Ironing',
-      'Free pickup & delivery',
-      '48-hour turnaround'
+      '5kg wash, dry & fold',
+      'Premium detergents',
+      'Perfect folding',
+      '24-hour turnaround',
+      'Fabric softener'
     ]
   },
   {
-    title: 'Premium Package',
-    icon: Star,
+    title: 'Bedding Refresh Bundle',
+    icon: Bed,
     color: 'laundry-purple',
-    price: '$200',
-    originalPrice: '$250',
-    savings: '$50',
-    description: 'Complete care for special occasions',
+    price: '$35',
+    originalPrice: '$40',
+    savings: '$5',
+    description: 'Complete bedding care',
     includes: [
-      '1 Wedding Dress Cleaning',
-      '2 Suits Dry Cleaning',
-      '5 Shirts Ironing',
-      'Express service included',
-      'Free pickup & delivery'
+      '2 sets of bedding',
+      'Wash, dry & fold',
+      'Premium care',
+      'Free pickup & delivery',
+      '48-hour turnaround'
     ]
   }
 ]

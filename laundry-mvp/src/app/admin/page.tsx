@@ -35,7 +35,7 @@ const recentBookings = [
   {
     id: 'BK001234',
     customer: 'John Smith',
-    service: 'Dry Cleaning',
+    service: 'Laundry',
     date: '2024-01-15',
     status: 'completed',
     amount: 45.00,
@@ -62,7 +62,7 @@ const recentBookings = [
   {
     id: 'BK001237',
     customer: 'Emma Davis',
-    service: 'Dry Cleaning',
+    service: 'Laundry',
     date: '2024-01-18',
     status: 'scheduled',
     amount: 55.00,
@@ -355,7 +355,7 @@ export default function AdminDashboard() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-900">Phone</p>
-                    <p className="text-sm text-gray-600">1300 123 456</p>
+                    <p className="text-sm text-gray-600">(03) 9571 1494</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -364,7 +364,7 @@ export default function AdminDashboard() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-900">Email</p>
-                    <p className="text-sm text-gray-600">info@laundrypro.com.au</p>
+                    <p className="text-sm text-gray-600">info@ultracleany.com.au</p>
                   </div>
                 </div>
               </div>

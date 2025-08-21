@@ -108,7 +108,7 @@ Thank you for choosing FamsComTech Laundry!
                       <CheckCircle className={`h-8 w-8 ${isFirstTime ? 'text-purple-600' : 'text-green-600'}`} />
                     </div>
                     <CardTitle className="text-2xl font-bold text-gray-900">
-                      {isFirstTime ? 'Welcome to LaundryPro! 🎉' : 'Booking Confirmed!'}
+                      {isFirstTime ? 'Welcome to Ultra Cleany Laundry! 🎉' : 'Booking Confirmed!'}
                     </CardTitle>
                     <p className="text-gray-600">
                       {isFirstTime 
@@ -251,7 +251,7 @@ Thank you for choosing FamsComTech Laundry!
                 </div>
                 <div className="flex items-center space-x-1">
                   <Phone className="h-4 w-4 text-gray-500" />
-                  <span className="text-gray-600">1300-LAUNDRY</span>
+                                          <span className="text-gray-600">(03) 9571 1494</span>
                 </div>
               </div>
             </div>

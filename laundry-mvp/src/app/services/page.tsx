@@ -22,50 +22,26 @@ import {
 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Our Services - LaundryPro',
-  description: 'Professional dry cleaning, laundry, ironing, and specialty services. Quality guaranteed with eco-friendly processes.',
-  keywords: 'dry cleaning, laundry service, ironing, express service, curtain cleaning, rug cleaning, wedding dress',
+      title: 'Our Services - Ultra Cleany Laundry',
+  description: 'Professional laundry, ironing, and specialty services. Quality guaranteed with eco-friendly processes.',
+  keywords: 'laundry service, ironing, express service',
 }
 
 const services = [
   {
-    id: 'dry-cleaning',
-    title: 'Dry Cleaning',
-    description: 'Professional dry cleaning for delicate fabrics and garments that require special care.',
-    iconName: 'Shirt',
-    color: 'laundry-blue',
-    price: '$15',
-    unit: 'per item',
-    badge: 'Premium Service',
-    features: [
-      'Eco-friendly solvents',
-      'Delicate fabric care',
-      'Expert finishing',
-      'Stain treatment',
-      'Professional pressing'
-    ],
-    process: [
-      'Inspection and tagging',
-      'Pre-treatment for stains',
-      'Eco-friendly cleaning',
-      'Quality inspection',
-      'Professional finishing'
-    ]
-  },
-  {
-    id: 'laundry',
-    title: 'Laundry Service',
-    description: 'Complete wash, dry, and fold service with premium detergents and careful handling.',
+    id: 'everyday-laundry',
+    title: 'Everyday Laundry Bundle',
+    description: '5kg minimum (wash, dry, fold) with premium detergents and careful handling.',
     iconName: 'Sparkles',
     color: 'laundry-green',
-    price: '$25',
-    unit: 'per load',
+    price: '$30',
+    unit: 'per 5kg',
     badge: 'Most Popular',
     features: [
+      '5kg minimum bundle',
       'Wash, dry & fold',
       'Gentle detergents',
       'Perfect folding',
-      'Fabric softener',
       'Quality inspection'
     ],
     process: [
@@ -79,17 +55,17 @@ const services = [
   {
     id: 'ironing',
     title: 'Ironing Service',
-    description: 'Expert pressing and steam treatment for crisp, professional finishes.',
+    description: 'Minimum charge for ironing services with expert pressing and steam treatment.',
     iconName: 'Zap',
     color: 'laundry-orange',
-    price: '$10',
-    unit: 'per item',
+    price: '$20',
+    unit: 'minimum',
     badge: 'Professional',
     features: [
+      'Minimum $20 charge',
       'Expert pressing',
       'Steam treatment',
       'Crisp finish',
-      'Wrinkle-free results',
       'Professional handling'
     ],
     process: [
@@ -113,39 +89,6 @@ const additionalServices = [
     unit: 'from',
     badge: 'Express',
     features: ['Same-day turnaround', 'Priority processing', 'Premium care', 'Urgent handling']
-  },
-  {
-    id: 'curtains',
-    title: 'Curtain Cleaning',
-    description: 'Professional cleaning for curtains, drapes, and window treatments.',
-    iconName: 'Heart',
-    color: 'laundry-yellow',
-    price: '$45',
-    unit: 'from',
-    badge: 'Specialty',
-    features: ['Gentle cleaning', 'Fabric protection', 'Professional handling', 'Expert finishing']
-  },
-  {
-    id: 'rugs',
-    title: 'Rug Cleaning',
-    description: 'Deep cleaning for area rugs and carpets with stain removal.',
-    iconName: 'Shield',
-    color: 'laundry-red',
-    price: '$60',
-    unit: 'from',
-    badge: 'Deep Clean',
-    features: ['Deep cleaning', 'Stain removal', 'Fabric protection', 'Professional drying']
-  },
-  {
-    id: 'wedding-dress',
-    title: 'Wedding Dress',
-    description: 'Specialized cleaning and preservation for wedding dresses.',
-    iconName: 'Star',
-    color: 'laundry-pink',
-    price: '$120',
-    unit: 'from',
-    badge: 'Premium',
-    features: ['Specialized cleaning', 'Preservation treatment', 'Expert handling', 'Storage packaging']
   }
 ]
 
@@ -162,8 +105,8 @@ export default function ServicesPage() {
               Our Premium Services
             </Heading>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Professional laundry and dry cleaning services tailored to your needs. 
-              From everyday laundry to delicate dry cleaning, we provide quality care 
+              Professional laundry and ironing services tailored to your needs. 
+              From everyday laundry to expert ironing, we provide quality care 
               with eco-friendly processes and convenient pickup and delivery.
             </p>
           </div>

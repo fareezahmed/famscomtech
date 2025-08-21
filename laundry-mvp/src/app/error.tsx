@@ -51,7 +51,7 @@ export default function Error({
           
           <div className="mt-8 text-sm text-gray-500">
             <p>If this problem continues, please contact us:</p>
-            <p className="font-medium">1300 123 456</p>
+            <p className="font-medium">(03) 9571 1494</p>
             <p className="text-xs mt-2">Error ID: {error.digest || 'unknown'}</p>
           </div>
         </div>

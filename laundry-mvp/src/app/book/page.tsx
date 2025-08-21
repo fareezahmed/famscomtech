@@ -7,11 +7,11 @@ import BookFormWrapper from "@/components/forms/BookFormWrapper"
 
 export const metadata: Metadata = {
   title: 'Book Your Laundry Service | FamsComTech Laundry',
-  description: 'Book your laundry, dry cleaning, or ironing service online. Fast, reliable pickup and delivery in your area.',
-  keywords: 'book laundry service, online booking, dry cleaning booking, ironing service booking',
+  description: 'Book your laundry or ironing service online. Fast, reliable pickup and delivery in your area.',
+  keywords: 'book laundry service, online booking, ironing service booking',
   openGraph: {
     title: 'Book Your Laundry Service | FamsComTech Laundry',
-    description: 'Book your laundry, dry cleaning, or ironing service online. Fast, reliable pickup and delivery in your area.',
+          description: 'Book your laundry or ironing service online. Fast, reliable pickup and delivery in your area.',
     type: 'website',
   },
 }
@@ -91,14 +91,19 @@ export default function BookPage() {
                     We currently serve the following areas:
                   </p>
                   <div className="grid grid-cols-2 gap-2 text-sm">
-                    <div className="text-gray-700">• Sydney CBD</div>
-                    <div className="text-gray-700">• North Sydney</div>
-                    <div className="text-gray-700">• Bondi</div>
-                    <div className="text-gray-700">• Manly</div>
-                    <div className="text-gray-700">• Parramatta</div>
-                    <div className="text-gray-700">• Chatswood</div>
-                    <div className="text-gray-700">• St George</div>
-                    <div className="text-gray-700">• Eastern Suburbs</div>
+                    <div className="text-gray-700">• Toorak</div>
+                    <div className="text-gray-700">• Kooyong</div>
+                    <div className="text-gray-700">• Hawthorn East</div>
+                    <div className="text-gray-700">• Armadale</div>
+                    <div className="text-gray-700">• Glen Iris</div>
+                    <div className="text-gray-700">• Caulfield North</div>
+                    <div className="text-gray-700">• Caulfield East</div>
+                    <div className="text-gray-700">• Malvern East</div>
+                    <div className="text-gray-700">• Prahran</div>
+                    <div className="text-gray-700">• Windsor</div>
+                    <div className="text-gray-700">• South Yarra</div>
+                    <div className="text-gray-700">• Burnley</div>
+                    <div className="text-gray-700">• Richmond</div>
                   </div>
                   <p className="text-xs text-gray-500 mt-3">
                     Don't see your area? Contact us to check availability.
@@ -113,7 +118,7 @@ export default function BookPage() {
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center space-x-2">
                       <span className="text-laundry-blue">📞</span>
-                      <span className="text-gray-700">Call: 1300-LAUNDRY</span>
+                      <span className="text-gray-700">Call: (03) 9571 1494</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <span className="text-laundry-blue">📧</span>

@@ -18,13 +18,12 @@ import {
 
 const navigation = {
   services: [
-    { name: "Dry Cleaning", href: "/services/dry-cleaning" },
     { name: "Laundry", href: "/services/laundry" },
     { name: "Ironing", href: "/services/ironing" },
   ],
   company: [
     { name: "About Us", href: "/about" },
-    { name: "Service Areas", href: "/areas" },
+
     { name: "Pricing", href: "/pricing" },
     { name: "Contact", href: "/contact" },
   ],
@@ -50,24 +49,24 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <Icon icon={ShirtIcon} className="h-8 w-8 text-laundry-blue" />
-              <span className="text-xl font-bold">LaundryPro</span>
+              <span className="text-xl font-bold">Ultra Cleany Laundry</span>
             </div>
             <p className="text-gray-300 mb-6">
-              Professional laundry and dry cleaning services in Melbourne. 
+              Professional laundry and ironing services in Melbourne. 
               Quality care for your clothes, delivered to your door.
             </p>
             <div className="space-y-2 text-sm text-gray-300">
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 text-laundry-blue" />
-                <span>1300 123 456</span>
+                <span>(03) 9571 1494</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-laundry-blue" />
-                <span>info@laundrypro.com.au</span>
+                <span>info@ultracleany.com.au</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4 text-laundry-blue" />
-                <span>Melbourne, VIC</span>
+                <span>Malvern East, VIC</span>
               </div>
             </div>
           </div>
@@ -153,7 +152,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-sm text-gray-400">
-            © 2024 LaundryPro. All rights reserved.
+            © 2024 Ultra Cleany Laundry. All rights reserved.
           </div>
           
           <div className="flex items-center space-x-4">

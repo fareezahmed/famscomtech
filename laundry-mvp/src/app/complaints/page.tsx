@@ -23,7 +23,7 @@ import {
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Complaints & Feedback - LaundryPro',
+      title: 'Complaints & Feedback - Ultra Cleany Laundry',
   description: 'We take your feedback seriously. Contact us to resolve any issues with our laundry service.',
   keywords: 'complaints, feedback, customer service, laundry complaints, resolution',
 }
@@ -111,7 +111,7 @@ const contactMethods = [
     title: "Phone Complaints",
     icon: Phone,
     description: "Speak directly with our complaints resolution team",
-    contact: "1300 123 456",
+          contact: "(03) 9571 1494",
     availability: "Mon-Fri: 7AM-7PM, Sat: 8AM-6PM",
     response: "Immediate assistance"
   },
@@ -119,7 +119,7 @@ const contactMethods = [
     title: "Email Complaints",
     icon: Mail,
     description: "Send detailed complaint with supporting information",
-    contact: "complaints@laundrypro.com.au",
+          contact: "complaints@ultracleany.com.au",
     availability: "24/7",
     response: "Response within 4 hours during business hours"
   },

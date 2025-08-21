@@ -6,11 +6,11 @@ import ContactForm from '@/components/forms/ContactForm'
 
 export const metadata: Metadata = {
   title: 'Contact Us | FamsComTech Laundry',
-  description: 'Get in touch with FamsComTech Laundry. We\'re here to help with all your laundry and dry cleaning needs. Contact us today!',
-  keywords: 'contact laundry service, laundry contact, dry cleaning contact, customer support',
+  description: 'Get in touch with FamsComTech Laundry. We\'re here to help with all your laundry needs. Contact us today!',
+  keywords: 'contact laundry service, laundry contact, customer support',
   openGraph: {
     title: 'Contact Us | FamsComTech Laundry',
-    description: 'Get in touch with FamsComTech Laundry. We\'re here to help with all your laundry and dry cleaning needs.',
+          description: 'Get in touch with FamsComTech Laundry. We\'re here to help with all your laundry needs.',
     type: 'website',
   },
 }
@@ -92,7 +92,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="font-medium text-gray-900">Phone</p>
-                        <p className="text-gray-600">1300-LAUNDRY</p>
+                        <p className="text-gray-600">(03) 9571 1494</p>
                         <p className="text-sm text-gray-500">Available during business hours</p>
                       </div>
                     </div>
@@ -138,14 +138,19 @@ export default function ContactPage() {
                     We provide pickup and delivery services to the following areas:
                   </p>
                   <div className="grid grid-cols-2 gap-2 text-sm">
-                    <div className="text-gray-700">• Sydney CBD</div>
-                    <div className="text-gray-700">• North Sydney</div>
-                    <div className="text-gray-700">• Bondi</div>
-                    <div className="text-gray-700">• Manly</div>
-                    <div className="text-gray-700">• Parramatta</div>
-                    <div className="text-gray-700">• Chatswood</div>
-                    <div className="text-gray-700">• St George</div>
-                    <div className="text-gray-700">• Eastern Suburbs</div>
+                    <div className="text-gray-700">• Toorak</div>
+                    <div className="text-gray-700">• Kooyong</div>
+                    <div className="text-gray-700">• Hawthorn East</div>
+                    <div className="text-gray-700">• Armadale</div>
+                    <div className="text-gray-700">• Glen Iris</div>
+                    <div className="text-gray-700">• Caulfield North</div>
+                    <div className="text-gray-700">• Caulfield East</div>
+                    <div className="text-gray-700">• Malvern East</div>
+                    <div className="text-gray-700">• Prahran</div>
+                    <div className="text-gray-700">• Windsor</div>
+                    <div className="text-gray-700">• South Yarra</div>
+                    <div className="text-gray-700">• Burnley</div>
+                    <div className="text-gray-700">• Richmond</div>
                   </div>
                   <p className="text-xs text-gray-500 mt-3">
                     Don't see your area? Contact us to check availability.
@@ -165,7 +170,7 @@ export default function ContactPage() {
                   </p>
                   <div className="flex items-center space-x-2">
                     <span className="text-red-900 font-medium">Emergency Hotline:</span>
-                    <span className="text-red-800">1300-LAUNDRY</span>
+                    <span className="text-red-800">(03) 9571 1494</span>
                   </div>
                 </div>
               </div>

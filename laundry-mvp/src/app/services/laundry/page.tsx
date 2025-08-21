@@ -23,7 +23,7 @@ import {
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Laundry Service - LaundryPro',
+      title: 'Laundry Service - Ultra Cleany Laundry',
   description: 'Professional wash, dry & fold laundry service. Premium detergents, perfect folding, and quality guaranteed. Free pickup and delivery.',
   keywords: 'laundry service, wash dry fold, premium detergents, perfect folding, pickup delivery',
 }
@@ -63,25 +63,25 @@ const processSteps = [
 
 const pricingOptions = [
   {
-    plan: 'Small Load',
-    price: '$20',
-    items: 'Up to 15 items',
-    description: 'Perfect for individuals or small households',
-    features: ['Wash, dry & fold', 'Gentle detergents', 'Perfect folding', '24-hour turnaround']
+    plan: 'Everyday Laundry Bundle',
+    price: '$30',
+    items: '5kg minimum (wash, dry, fold)',
+    description: 'Most popular choice for regular laundry',
+    features: ['5kg minimum bundle', 'Wash, dry & fold', 'Premium detergents', 'Perfect folding', '24-hour turnaround']
   },
   {
-    plan: 'Regular Load',
+    plan: 'Domestic Washing & Drying',
     price: '$25',
-    items: 'Up to 25 items',
-    description: 'Most popular choice for families',
-    features: ['Wash, dry & fold', 'Premium detergents', 'Perfect folding', '24-hour turnaround', 'Fabric softener']
+    items: '5kg minimum (no folding)',
+    description: 'Perfect for those who prefer to fold themselves',
+    features: ['5kg minimum', 'Wash & dry only', 'Premium detergents', '24-hour turnaround', 'No folding service']
   },
   {
-    plan: 'Large Load',
+    plan: 'Commercial Washing Bundle',
     price: '$35',
-    items: 'Up to 40 items',
-    description: 'Great for large families or bulk laundry',
-    features: ['Wash, dry & fold', 'Premium detergents', 'Perfect folding', '24-hour turnaround', 'Fabric softener', 'Priority processing']
+    items: '5kg minimum bundle package',
+    description: 'Great for businesses and commercial needs',
+    features: ['5kg minimum bundle', 'Wash, dry & fold', 'Premium detergents', 'Priority processing', 'Business rates']
   }
 ]
 

@@ -4,14 +4,14 @@ import { Metadata } from 'next'
 export const baseSEO: Metadata = {
   metadataBase: new URL('https://famscomtech.com'),
   title: {
-    default: 'FamsComTech - Professional Laundry & Dry Cleaning Services',
-    template: '%s | FamsComTech Laundry Services'
+    default: 'Ultra Cleany Laundry - Professional Laundry Services',
+    template: '%s | Ultra Cleany Laundry'
   },
-  description: 'Professional laundry and dry cleaning services in Sydney. Quality care for your clothes, delivered to your door. Eco-friendly, reliable, and convenient.',
+  description: 'Professional laundry services in Melbourne. Quality care for your clothes, delivered to your door. Eco-friendly, reliable, and convenient.',
   keywords: [
     'laundry service',
-    'dry cleaning',
-    'Sydney laundry',
+          'ironing',
+    'Melbourne laundry',
     'laundry delivery',
     'eco-friendly laundry',
     'professional laundry',
@@ -32,9 +32,9 @@ export const baseSEO: Metadata = {
     type: 'website',
     locale: 'en_AU',
     url: 'https://famscomtech.com',
-    siteName: 'FamsComTech Laundry Services',
-    title: 'FamsComTech - Professional Laundry & Dry Cleaning Services',
-    description: 'Professional laundry and dry cleaning services in Sydney. Quality care for your clothes, delivered to your door.',
+    siteName: 'Ultra Cleany Laundry',
+    title: 'Ultra Cleany Laundry - Professional Laundry Services',
+    description: 'Professional laundry services in Melbourne. Quality care for your clothes, delivered to your door.',
     images: [
       {
         url: '/og-image.jpg',
@@ -46,8 +46,8 @@ export const baseSEO: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FamsComTech - Professional Laundry & Dry Cleaning Services',
-    description: 'Professional laundry and dry cleaning services in Sydney. Quality care for your clothes, delivered to your door.',
+    title: 'Ultra Cleany Laundry - Professional Laundry Services',
+    description: 'Professional laundry services in Melbourne. Quality care for your clothes, delivered to your door.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -75,17 +75,17 @@ export const baseSEO: Metadata = {
 export const localBusinessStructuredData = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  name: 'FamsComTech Laundry Services',
-  description: 'Professional laundry and dry cleaning services in Sydney. Quality care for your clothes, delivered to your door.',
+  name: 'Ultra Cleany Laundry',
+  description: 'Professional laundry services in Melbourne. Quality care for your clothes, delivered to your door.',
   url: 'https://famscomtech.com',
-  telephone: '+61-1300-123-456',
-  email: 'info@famscomtech.com.au',
+  telephone: '+61-3-9571-1494',
+  email: 'info@ultracleany.com.au',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '123 Laundry Street',
-    addressLocality: 'Sydney',
-    addressRegion: 'NSW',
-    postalCode: '2000',
+    streetAddress: '31 WAVERLEY Road',
+    addressLocality: 'MALVERN EAST',
+    addressRegion: 'VIC',
+    postalCode: '3145',
     addressCountry: 'AU'
   },
   geo: {
@@ -111,14 +111,14 @@ export const localBusinessStructuredData = {
   paymentAccepted: ['Cash', 'Credit Card', 'Bank Transfer'],
   areaServed: {
     '@type': 'City',
-    name: 'Sydney'
+    name: 'Melbourne'
   },
   serviceArea: {
     '@type': 'GeoCircle',
     geoMidpoint: {
       '@type': 'GeoCoordinates',
-      latitude: -33.8688,
-      longitude: 151.2093
+      latitude: -37.8136,
+      longitude: 144.9631
     },
     geoRadius: '50000'
   },
@@ -130,8 +130,8 @@ export const localBusinessStructuredData = {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Dry Cleaning',
-          description: 'Professional dry cleaning service for delicate garments'
+          name: 'Laundry Service',
+          description: 'Professional laundry service for all garments'
         }
       },
       {
@@ -169,12 +169,12 @@ export const serviceStructuredData = (serviceName: string, description: string, 
   description: description,
   provider: {
     '@type': 'LocalBusiness',
-    name: 'FamsComTech Laundry Services',
+    name: 'Ultra Cleany Laundry',
     url: 'https://famscomtech.com'
   },
   areaServed: {
     '@type': 'City',
-    name: 'Sydney'
+    name: 'Melbourne'
   },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -220,20 +220,20 @@ export const breadcrumbStructuredData = (breadcrumbs: Array<{ name: string; url:
 export const organizationStructuredData = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'FamsComTech Laundry Services',
+  name: 'Ultra Cleany Laundry',
   url: 'https://famscomtech.com',
   logo: 'https://famscomtech.com/logo.png',
   contactPoint: {
     '@type': 'ContactPoint',
-    telephone: '+61-1300-123-456',
+    telephone: '+61-3-9571-1494',
     contactType: 'customer service',
     areaServed: 'AU',
     availableLanguage: 'English'
   },
   sameAs: [
-    'https://facebook.com/famscomtech',
-    'https://twitter.com/famscomtech',
-    'https://instagram.com/famscomtech'
+    'https://facebook.com/ultracleany',
+    'https://twitter.com/ultracleany',
+    'https://instagram.com/ultracleany'
   ]
 }
 
@@ -241,24 +241,24 @@ export const organizationStructuredData = {
 export const generatePageSEO = (page: string, customMeta?: Partial<Metadata>): Metadata => {
   const pageSEO: Record<string, Metadata> = {
     home: {
-      title: 'Professional Laundry & Dry Cleaning Services in Sydney',
-      description: 'Professional laundry and dry cleaning services in Sydney. Quality care for your clothes, delivered to your door. Book online today!',
+      title: 'Professional Laundry Services in Melbourne',
+      description: 'Professional laundry services in Melbourne. Quality care for your clothes, delivered to your door. Book online today!',
       openGraph: {
-        title: 'Professional Laundry & Dry Cleaning Services in Sydney',
-        description: 'Professional laundry and dry cleaning services in Sydney. Quality care for your clothes, delivered to your door.',
+        title: 'Professional Laundry Services in Melbourne',
+        description: 'Professional laundry services in Melbourne. Quality care for your clothes, delivered to your door.',
       }
     },
     services: {
-      title: 'Laundry Services - Dry Cleaning, Washing & Ironing',
-      description: 'Professional laundry services including dry cleaning, washing, and ironing. Quality care for all your clothing needs in Sydney.',
+      title: 'Laundry Services - Washing & Ironing',
+      description: 'Professional laundry services including washing and ironing. Quality care for all your clothing needs in Melbourne.',
       openGraph: {
-        title: 'Laundry Services - Dry Cleaning, Washing & Ironing',
-        description: 'Professional laundry services including dry cleaning, washing, and ironing.',
+        title: 'Laundry Services - Washing & Ironing',
+        description: 'Professional laundry services including washing and ironing.',
       }
     },
     pricing: {
       title: 'Laundry Service Pricing - Transparent & Competitive Rates',
-      description: 'Transparent pricing for all our laundry services. Competitive rates for dry cleaning, washing, and ironing in Sydney.',
+      description: 'Transparent pricing for all our laundry services. Competitive rates for washing and ironing in Melbourne.',
       openGraph: {
         title: 'Laundry Service Pricing - Transparent & Competitive Rates',
         description: 'Transparent pricing for all our laundry services.',
@@ -266,7 +266,7 @@ export const generatePageSEO = (page: string, customMeta?: Partial<Metadata>): M
     },
     book: {
       title: 'Book Laundry Service Online - Easy & Convenient',
-      description: 'Book your laundry service online. Easy, convenient, and secure booking for dry cleaning, washing, and ironing services.',
+      description: 'Book your laundry service online. Easy, convenient, and secure booking for washing and ironing services.',
       openGraph: {
         title: 'Book Laundry Service Online - Easy & Convenient',
         description: 'Book your laundry service online. Easy, convenient, and secure booking.',

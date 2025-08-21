@@ -24,7 +24,7 @@ import {
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Booking Help - LaundryPro',
+      title: 'Booking Help - Ultra Cleany Laundry',
   description: 'Get help with booking your laundry service. Find answers to common questions and contact our support team.',
   keywords: 'booking help, laundry booking, support, FAQ, customer service',
 }
@@ -56,10 +56,10 @@ const helpSections = [
     title: "Service Areas",
     icon: MapPin,
     items: [
-      "Sydney CBD and inner suburbs",
-      "Eastern suburbs and North Shore",
-      "Western suburbs and Parramatta",
-      "Northern beaches and Central Coast",
+      "Toorak, Kooyong, Hawthorn East",
+      "Armadale, Glen Iris, Caulfield North",
+      "Caulfield East, Malvern East, Prahran",
+      "Windsor, South Yarra, Burnley, Richmond",
       "Contact us to check your specific area"
     ]
   },
@@ -108,14 +108,14 @@ const contactMethods = [
     title: "Phone Support",
     icon: Phone,
     description: "Speak directly with our customer service team",
-    contact: "1300 123 456",
+          contact: "(03) 9571 1494",
     availability: "Mon-Fri: 7AM-7PM, Sat: 8AM-6PM, Sun: 9AM-5PM"
   },
   {
     title: "Email Support",
     icon: Mail,
     description: "Send us a detailed message and we'll respond within 2 hours",
-    contact: "help@laundrypro.com.au",
+          contact: "help@ultracleany.com.au",
     availability: "24/7 - Response within 2 hours during business hours"
   },
   {

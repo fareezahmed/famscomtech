@@ -24,7 +24,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'About Us - FamsComTech Laundry Services',
-  description: 'Learn about our mission, values, and commitment to providing exceptional laundry services. Meet our team and discover what makes us different.',
+  description: 'Learn about our mission, values, and commitment to providing exceptional laundry services. Discover what makes us different.',
   keywords: 'about us, laundry service, team, mission, values, FamsComTech',
   openGraph: {
     title: 'About Us - FamsComTech Laundry Services',
@@ -33,36 +33,7 @@ export const metadata: Metadata = {
   },
 }
 
-const teamMembers = [
-  {
-    name: 'Sarah Johnson',
-    role: 'Founder & CEO',
-    bio: 'With over 15 years in the laundry industry, Sarah founded FamsComTech with a vision to revolutionize home laundry services through technology and exceptional customer care.',
-    image: '/team/sarah.jpg',
-    experience: '15+ years'
-  },
-  {
-    name: 'Michael Chen',
-    role: 'Operations Manager',
-    bio: 'Michael ensures every aspect of our service runs smoothly, from pickup to delivery, maintaining our high standards of quality and efficiency.',
-    image: '/team/michael.jpg',
-    experience: '8+ years'
-  },
-  {
-    name: 'Emma Rodriguez',
-    role: 'Customer Experience Lead',
-    bio: 'Emma is dedicated to ensuring every customer has an exceptional experience, handling inquiries and feedback with care and professionalism.',
-    image: '/team/emma.jpg',
-    experience: '6+ years'
-  },
-  {
-    name: 'David Thompson',
-    role: 'Quality Control Specialist',
-    bio: 'David oversees our quality standards, ensuring every garment receives the care it deserves and meets our rigorous quality benchmarks.',
-    image: '/team/david.jpg',
-    experience: '10+ years'
-  }
-]
+
 
 const values = [
   {
@@ -106,7 +77,7 @@ const milestones = [
   {
     year: '2021',
     title: 'Service Expansion',
-    description: 'Expanded services to include dry cleaning and ironing, serving over 500 customers.'
+            description: 'Expanded services to include ironing, serving over 500 customers.'
   },
   {
     year: '2022',
@@ -269,43 +240,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <Separator className="my-16" />
 
-            {/* Team Section */}
-            <div className="mb-20">
-              <div className="text-center mb-12">
-                <Heading as="h2" size="3xl" className="text-3xl font-bold text-gray-900 mb-4">
-                  Meet Our Team
-                </Heading>
-                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                  Dedicated professionals committed to providing you with the best laundry experience
-                </p>
-              </div>
-              
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {teamMembers.map((member, index) => (
-                  <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                    <CardContent className="p-6">
-                      <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <Users className="w-12 h-12 text-gray-400" />
-                      </div>
-                      <Heading as="h3" size="lg" className="text-lg font-semibold text-gray-900 mb-1">
-                        {member.name}
-                      </Heading>
-                      <p className="text-blue-600 font-medium mb-2">{member.role}</p>
-                      <Badge variant="outline" className="mb-3">
-                        {member.experience} Experience
-                      </Badge>
-                      <p className="text-sm text-gray-600">
-                        {member.bio}
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            <Separator className="my-16" />
 
             {/* Stats Section */}
             <div className="mb-20">

@@ -14,7 +14,9 @@ import {
   Star,
   Calculator,
   DollarSign,
-  Package
+  Package,
+  Bed,
+  Briefcase
 } from "lucide-react";
 
 interface Service {
@@ -27,39 +29,69 @@ interface Service {
   unit: string;
   minQuantity?: number;
   maxQuantity?: number;
+  extraUnitPrice?: number;
+  extraUnit?: string;
 }
 
 const services: Service[] = [
   {
-    id: 'dry-cleaning',
-    title: 'Dry Cleaning',
-    description: 'Professional dry cleaning for delicate fabrics',
-    icon: Shirt,
-    color: 'laundry-blue',
-    basePrice: 15,
-    unit: 'per item',
+    id: 'everyday-laundry',
+    title: 'Everyday Laundry Bundle',
+    description: '5kg minimum (wash, dry, fold)',
+    icon: Package,
+    color: 'laundry-green',
+    basePrice: 30,
+    unit: 'per 5kg',
     minQuantity: 1,
-    maxQuantity: 50
+    maxQuantity: 20,
+    extraUnitPrice: 5.50,
+    extraUnit: 'per extra kg'
   },
   {
-    id: 'laundry',
-    title: 'Laundry Service',
-    description: 'Wash, dry & fold with premium detergents',
+    id: 'domestic-washing',
+    title: 'Domestic Washing & Drying',
+    description: '5kg minimum (no folding)',
     icon: Sparkles,
-    color: 'laundry-green',
+    color: 'laundry-blue',
     basePrice: 25,
-    unit: 'per load',
+    unit: 'per 5kg',
     minQuantity: 1,
-    maxQuantity: 20
+    maxQuantity: 20,
+    extraUnitPrice: 5.00,
+    extraUnit: 'per extra kg'
+  },
+  {
+    id: 'commercial-washing',
+    title: 'Commercial Washing Bundle',
+    description: '5kg minimum bundle package',
+    icon: Briefcase,
+    color: 'laundry-purple',
+    basePrice: 35,
+    unit: 'per 5kg',
+    minQuantity: 1,
+    maxQuantity: 20,
+    extraUnitPrice: 5.50,
+    extraUnit: 'per extra kg'
+  },
+  {
+    id: 'bedding-bundle',
+    title: 'Bedding Refresh Bundle',
+    description: '2 sets of bedding (wash, dry, fold)',
+    icon: Bed,
+    color: 'laundry-yellow',
+    basePrice: 35,
+    unit: 'per 2 sets',
+    minQuantity: 1,
+    maxQuantity: 10
   },
   {
     id: 'ironing',
     title: 'Ironing Service',
-    description: 'Expert pressing and steam treatment',
+    description: 'Minimum charge for ironing services',
     icon: Zap,
     color: 'laundry-orange',
-    basePrice: 10,
-    unit: 'per item',
+    basePrice: 20,
+    unit: 'minimum',
     minQuantity: 1,
     maxQuantity: 100
   },
@@ -68,42 +100,9 @@ const services: Service[] = [
     title: 'Express Service',
     description: 'Same-day turnaround for urgent needs',
     icon: Clock,
-    color: 'laundry-purple',
+    color: 'laundry-red',
     basePrice: 10,
     unit: 'surcharge',
-    minQuantity: 1,
-    maxQuantity: 1
-  },
-  {
-    id: 'curtains',
-    title: 'Curtain Cleaning',
-    description: 'Professional cleaning for curtains and drapes',
-    icon: Heart,
-    color: 'laundry-yellow',
-    basePrice: 45,
-    unit: 'from',
-    minQuantity: 1,
-    maxQuantity: 10
-  },
-  {
-    id: 'rugs',
-    title: 'Rug Cleaning',
-    description: 'Deep cleaning for area rugs and carpets',
-    icon: Shield,
-    color: 'laundry-red',
-    basePrice: 60,
-    unit: 'from',
-    minQuantity: 1,
-    maxQuantity: 5
-  },
-  {
-    id: 'wedding-dress',
-    title: 'Wedding Dress',
-    description: 'Specialized cleaning and preservation',
-    icon: Star,
-    color: 'laundry-pink',
-    basePrice: 120,
-    unit: 'from',
     minQuantity: 1,
     maxQuantity: 1
   }
@@ -126,7 +125,16 @@ export default function PriceCalculator({
   // Calculate total price when service, quantity, or express service changes
   useEffect(() => {
     if (selectedService) {
-      let baseTotal = selectedService.basePrice * quantity;
+      let baseTotal = selectedService.basePrice;
+      
+      // Calculate extra units for services that have extra unit pricing
+      if (selectedService.extraUnitPrice && quantity > 1) {
+        const extraUnits = quantity - 1;
+        baseTotal += extraUnits * selectedService.extraUnitPrice;
+      } else if (!selectedService.extraUnitPrice) {
+        // For services without extra unit pricing, multiply by quantity
+        baseTotal = selectedService.basePrice * quantity;
+      }
       
       // Add express service surcharge if selected
       if (expressService && selectedService.id !== 'express') {
@@ -291,17 +299,39 @@ export default function PriceCalculator({
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-600">
-                        {selectedService.title} ({quantity} {selectedService.unit})
+                        {selectedService.title} (Base {selectedService.unit})
                       </span>
                       <span className="font-medium">
-                        {formatPrice(selectedService.basePrice * quantity)}
+                        {formatPrice(selectedService.basePrice)}
                       </span>
                     </div>
+                    
+                    {selectedService.extraUnitPrice && quantity > 1 && (
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-600">
+                          Extra {quantity - 1} {selectedService.extraUnit} ({formatPrice(selectedService.extraUnitPrice)} each)
+                        </span>
+                        <span className="font-medium">
+                          {formatPrice((quantity - 1) * selectedService.extraUnitPrice)}
+                        </span>
+                      </div>
+                    )}
+                    
+                    {!selectedService.extraUnitPrice && quantity > 1 && (
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-600">
+                          {quantity} x {formatPrice(selectedService.basePrice)} {selectedService.unit}
+                        </span>
+                        <span className="font-medium">
+                          {formatPrice(selectedService.basePrice * quantity)}
+                        </span>
+                      </div>
+                    )}
                     
                     {expressService && selectedService.id !== 'express' && (
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-600">Express Service Surcharge</span>
-                        <span className="font-medium text-laundry-purple">
+                        <span className="font-medium text-laundry-red">
                           {formatPrice(10)}
                         </span>
                       </div>

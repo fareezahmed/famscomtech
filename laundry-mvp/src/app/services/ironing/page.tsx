@@ -22,7 +22,7 @@ import {
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Ironing Service - LaundryPro',
+      title: 'Ironing Service - Ultra Cleany Laundry',
   description: 'Professional ironing and pressing service. Expert steam treatment, crisp finishes, and wrinkle-free results. Quality guaranteed.',
   keywords: 'ironing service, pressing, steam treatment, wrinkle-free, professional finishing',
 }
@@ -61,6 +61,11 @@ const processSteps = [
 ]
 
 const pricingItems = [
+  {
+    item: 'Minimum Ironing Service',
+    price: '$20',
+    description: 'Minimum charge for ironing services'
+  },
   {
     item: 'Shirts & Blouses',
     price: '$8',

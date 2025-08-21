@@ -27,7 +27,9 @@ import {
   Mail,
   Package,
   CheckCircle,
-  AlertCircle
+  AlertCircle,
+  Bed,
+  Briefcase
 } from "lucide-react";
 import React from "react";
 import BookingConfirmation from "./BookingConfirmation";
@@ -36,67 +38,58 @@ import { trackBooking, trackConversion } from "@/components/analytics/GoogleAnal
 // Service data
 const services = [
   {
-    id: 'dry-cleaning',
-    title: 'Dry Cleaning',
-    description: 'Professional dry cleaning for delicate fabrics',
-    icon: Shirt,
-    color: 'laundry-blue',
-    price: '$15',
-    unit: 'per item'
-  },
-  {
-    id: 'laundry',
-    title: 'Laundry Service',
-    description: 'Wash, dry & fold with premium detergents',
+    id: 'everyday-laundry',
+    title: 'Everyday Laundry Bundle',
+    description: '5kg minimum (wash, dry, fold), +$5.50 per extra kg',
     icon: Sparkles,
     color: 'laundry-green',
+    price: '$30',
+    unit: 'per 5kg'
+  },
+  {
+    id: 'domestic-washing',
+    title: 'Domestic Washing & Drying',
+    description: '5kg minimum (no folding), +$5.00 per extra kg',
+    icon: Package,
+    color: 'laundry-blue',
     price: '$25',
-    unit: 'per load'
+    unit: 'per 5kg'
+  },
+  {
+    id: 'commercial-washing',
+    title: 'Commercial Washing Bundle',
+    description: '5kg minimum bundle package',
+    icon: Briefcase,
+    color: 'laundry-purple',
+    price: '$35',
+    unit: 'per 5kg'
+  },
+  {
+    id: 'bedding-bundle',
+    title: 'Bedding Refresh Bundle',
+    description: '2 sets of bedding (wash, dry, fold)',
+    icon: Bed,
+    color: 'laundry-yellow',
+    price: '$35',
+    unit: 'per 2 sets'
   },
   {
     id: 'ironing',
     title: 'Ironing Service',
-    description: 'Expert pressing and steam treatment',
+    description: 'Minimum charge for ironing services',
     icon: Zap,
     color: 'laundry-orange',
-    price: '$10',
-    unit: 'per item'
+    price: '$20',
+    unit: 'minimum'
   },
   {
     id: 'express',
     title: 'Express Service',
     description: 'Same-day turnaround for urgent needs',
     icon: Clock,
-    color: 'laundry-purple',
+    color: 'laundry-red',
     price: '+$10',
     unit: 'surcharge'
-  },
-  {
-    id: 'curtains',
-    title: 'Curtain Cleaning',
-    description: 'Professional cleaning for curtains and drapes',
-    icon: Heart,
-    color: 'laundry-yellow',
-    price: '$45',
-    unit: 'from'
-  },
-  {
-    id: 'rugs',
-    title: 'Rug Cleaning',
-    description: 'Deep cleaning for area rugs and carpets',
-    icon: Shield,
-    color: 'laundry-red',
-    price: '$60',
-    unit: 'from'
-  },
-  {
-    id: 'wedding-dress',
-    title: 'Wedding Dress',
-    description: 'Specialized cleaning and preservation',
-    icon: Star,
-    color: 'laundry-pink',
-    price: '$120',
-    unit: 'from'
   }
 ];
 
@@ -233,17 +226,17 @@ export default function BookForm() {
                   <div className="flex items-center space-x-3">
                     <Icon
                       icon={service.icon}
-                      className={`h-6 w-6 text-${service.color}`}
+                      className={`h-6 w-6 text-${service.color} text-2xl`}
                     />
                     <div>
                       <CardTitle className="text-lg">{service.title}</CardTitle>
                       <p className="text-sm text-gray-600">{service.description}</p>
                     </div>
                   </div>
-                  <Badge variant="secondary" className="text-sm">
-                    {service.price} {service.unit}
-                  </Badge>
                 </div>
+                <Badge variant="secondary" className="text-sm">
+                  {service.price} {service.unit}
+                </Badge>
               </CardHeader>
             </Card>
           ))}

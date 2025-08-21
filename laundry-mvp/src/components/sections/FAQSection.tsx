@@ -15,11 +15,11 @@ const faqData = [
     questions: [
       {
         question: "How do I book a laundry service?",
-        answer: "You can book our services in three ways: 1) Online through our website booking form, 2) Call us at 1300-LAUNDRY, or 3) Use our mobile app. The online booking is the fastest and most convenient option."
+        answer: "You can book our services in three ways: 1) Online through our website booking form, 2) Call us at (03) 9571 1494, or 3) Use our mobile app. The online booking is the fastest and most convenient option."
       },
       {
         question: "What services do you offer?",
-        answer: "We offer comprehensive laundry services including: Dry Cleaning, Laundry Service (wash, dry & fold), Ironing Service, Express Service (same-day), Curtain Cleaning, Rug Cleaning, and Wedding Dress preservation."
+        answer: "We offer comprehensive laundry services including: Laundry Service (wash, dry & fold), Ironing Service, and Express Service (same-day)."
       },
       {
         question: "Do you offer same-day service?",
@@ -61,7 +61,7 @@ const faqData = [
     questions: [
       {
         question: "Which areas do you service?",
-        answer: "We currently serve Sydney CBD, North Sydney, Bondi, Manly, Parramatta, Chatswood, St George, Eastern Suburbs, Inner West, and Northern Beaches. Contact us to check if we service your specific area."
+        answer: "We currently serve Melbourne CBD, Malvern East, St Kilda, Brighton, South Yarra, Toorak, and surrounding areas. Contact us to check if we service your specific area."
       },
       {
         question: "Do you offer pickup and delivery?",
@@ -138,7 +138,7 @@ const faqData = [
       },
       {
         question: "How do I contact customer support?",
-        answer: "Our customer support team is available via phone (1300-LAUNDRY), email (hello@famscomtech.com), live chat on our website, or through our contact form. We typically respond within 2 hours."
+        answer: "Our customer support team is available via phone ((03) 9571 1494), email (hello@ultracleany.com.au), live chat on our website, or through our contact form. We typically respond within 2 hours."
       }
     ]
   }
@@ -261,10 +261,7 @@ export default function FAQSection() {
               <DollarSign className="h-4 w-4" />
               <span>Check Pricing</span>
             </a>
-            <a href="/areas" className="flex items-center space-x-2 text-blue-800 hover:text-blue-900">
-              <MapPin className="h-4 w-4" />
-              <span>Service Areas</span>
-            </a>
+
             <a href="/contact" className="flex items-center space-x-2 text-blue-800 hover:text-blue-900">
               <HelpCircle className="h-4 w-4" />
               <span>Contact Support</span>

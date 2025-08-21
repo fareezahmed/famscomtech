@@ -36,7 +36,7 @@ export default function NotFound() {
           
           <div className="mt-8 text-sm text-gray-500">
             <p>If you believe this is an error, please contact us at:</p>
-            <p className="font-medium">1300 123 456</p>
+            <p className="font-medium">(03) 9571 1494</p>
           </div>
         </div>
       </Container>

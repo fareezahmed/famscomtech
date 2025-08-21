@@ -296,7 +296,7 @@ export default function ContactForm() {
             <p className="text-blue-800 text-sm font-medium">Response Time</p>
             <p className="text-blue-700 text-sm">
               We typically respond within 2 hours during business hours. 
-              For urgent matters, please call us directly at 1300-LAUNDRY.
+              For urgent matters, please call us directly at (03) 9571 1494.
             </p>
           </div>
         </div>

@@ -6,6 +6,7 @@ import { Heading } from "@/components/ui/heading"
 import { Icon } from "@/components/ui/icon"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { AnimatedSection } from "@/components/ui/animated-section"
 import Link from "next/link"
 import {
   Sparkles,
@@ -16,7 +17,9 @@ import {
   Star,
   MapPin,
   Shirt as ShirtIcon,
-  Heart
+  Heart,
+  Briefcase,
+  Bed
 } from "lucide-react"
 import { generatePageSEO } from '@/lib/seo'
 
@@ -25,16 +28,19 @@ export const metadata: Metadata = generatePageSEO('home')
 export default function Home() {
   return (
     <MainLayout>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-laundry-blue via-laundry-purple to-laundry-green text-white">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
-          <div className="absolute top-0 left-0 w-full h-full" style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 2px, transparent 2px)`,
-            backgroundSize: '60px 60px'
-          }}></div>
-        </div>
+             {/* Hero Section */}
+       <section className="relative overflow-hidden bg-gradient-to-br from-laundry-blue via-laundry-purple to-laundry-green text-white parallax-section">
+         {/* Bubble Animation Background */}
+         <div className="absolute inset-0 opacity-30">
+           <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
+           <div className="absolute top-0 left-0 w-full h-full bubble-animation" style={{
+             backgroundImage: `url(/bubble.png)`,
+             backgroundRepeat: 'no-repeat',
+             backgroundSize: 'contain',
+             opacity: 1,
+             transition: 'background 0.3s, border-radius 0.3s, opacity 0.3s'
+           }}></div>
+         </div>
         
         {/* Floating Elements */}
         <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
@@ -51,16 +57,16 @@ export default function Home() {
               Eco-Friendly • Same Day Service • Free Pickup
             </Badge>
             
-            {/* Main Headline */}
-            <Heading variant="hero" size="6xl" className="mb-6 leading-tight">
-              <span className="block">Professional Laundry</span>
-              <span className="block text-laundry-light-blue">&amp; Dry Cleaning</span>
-            </Heading>
+                         {/* Main Headline */}
+             <Heading variant="hero" size="6xl" className="mb-6 leading-tight">
+               <span className="block gradient-text">Professional Laundry</span>
+               <span className="block text-laundry-light-blue">&amp; Dry Cleaning</span>
+             </Heading>
             
             {/* Value Proposition */}
             <p className="text-2xl lg:text-3xl mb-8 text-laundry-light-blue max-w-3xl mx-auto font-light leading-relaxed">
               Quality care for your clothes, delivered to your door. 
-              <span className="block text-white font-medium">Fast, reliable, and eco-friendly laundry services in Sydney.</span>
+              <span className="block text-white font-medium">Fast, reliable, and eco-friendly laundry services in Melbourne.</span>
             </p>
             
             {/* Key Benefits */}
@@ -79,20 +85,20 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Call-to-Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/book">
-                <Button variant="laundry-secondary" size="lg" className="text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                  <Icon icon={Clock} className="h-5 w-5 mr-2" />
-                  Book Now - Same Day Service
-                </Button>
-              </Link>
-              <Link href="/services">
-                <Button variant="laundry-outline" size="lg" className="text-lg px-8 py-4 border-2 hover:bg-white hover:text-laundry-blue transition-all duration-300">
-                  View Our Services
-                </Button>
-              </Link>
-            </div>
+                         {/* Call-to-Action Buttons */}
+             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+               <Link href="/book">
+                 <Button variant="laundry-secondary" size="lg" className="text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 btn-hover">
+                   <Icon icon={Clock} className="h-5 w-5 mr-2 spin-animation" />
+                   Book Now - Same Day Service
+                 </Button>
+               </Link>
+               <Link href="/services">
+                 <Button variant="laundry-outline" size="lg" className="text-lg px-8 py-4 border-2 hover:bg-white hover:text-laundry-blue transition-all duration-300 btn-hover">
+                   View Our Services
+                 </Button>
+               </Link>
+             </div>
             
             {/* Trust Indicators */}
             <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-sm text-laundry-light-blue">
@@ -120,138 +126,114 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 bg-gray-50">
-        <Container variant="page">
-          <div className="text-center mb-12">
-            <Heading variant="section" size="3xl" className="mb-4">
-              Why Choose LaundryPro?
-            </Heading>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We provide exceptional laundry services with convenience and care
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card variant="feature-card">
-              <CardContent className="text-center p-6">
-                <Icon icon={Truck} className="h-12 w-12 text-laundry-blue mx-auto mb-4" />
-                <Heading variant="card" size="xl" className="mb-2">
-                  Free Pickup & Delivery
-                </Heading>
-                <p className="text-gray-600">
-                  We come to you! Free pickup and delivery service for your convenience.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card variant="feature-card">
-              <CardContent className="text-center p-6">
-                <Icon icon={Clock} className="h-12 w-12 text-laundry-green mx-auto mb-4" />
-                <Heading variant="card" size="xl" className="mb-2">
-                  Express Service
-                </Heading>
-                <p className="text-gray-600">
-                  Need it fast? Our express service gets your clothes back in 24 hours.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card variant="feature-card">
-              <CardContent className="text-center p-6">
-                <Icon icon={Shield} className="h-12 w-12 text-laundry-orange mx-auto mb-4" />
-                <Heading variant="card" size="xl" className="mb-2">
-                  Quality Guarantee
-                </Heading>
-                <p className="text-gray-600">
-                  100% satisfaction guaranteed. We treat your clothes like our own.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </Container>
-      </section>
+             {/* Features Section */}
+       <AnimatedSection animationType="fade-in" className="py-16 bg-gray-50">
+         <Container variant="page">
+           <div className="text-center mb-12">
+             <Heading variant="section" size="3xl" className="mb-4 text-reveal">
+               Why Choose Ultra Cleany Laundry?
+             </Heading>
+             <p className="text-lg text-gray-600 max-w-2xl mx-auto text-reveal-delayed">
+               We provide exceptional laundry services with convenience and care
+             </p>
+           </div>
+           
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+             <AnimatedSection animationType="slide-in-left" delay={200}>
+               <Card variant="feature-card" className="card-hover">
+                 <CardContent className="text-center p-6">
+                   <div className="relative">
+                     <div className="w-16 h-16 mx-auto mb-4 float-animation">
+                       <img 
+                         src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" 
+                         alt="Delivery Truck" 
+                         className="w-full h-full object-contain"
+                       />
+                     </div>
+                     <div className="absolute inset-0 pulse-glow rounded-full"></div>
+                   </div>
+                   <Heading variant="card" size="xl" className="mb-2">
+                     Free Pickup & Delivery
+                   </Heading>
+                   <p className="text-gray-600">
+                     We come to you! Free pickup and delivery service for your convenience.
+                   </p>
+                 </CardContent>
+               </Card>
+             </AnimatedSection>
+             
+             <AnimatedSection animationType="fade-in" delay={400}>
+               <Card variant="feature-card" className="card-hover">
+                 <CardContent className="text-center p-6">
+                   <div className="relative">
+                     <Icon icon={Clock} className="h-12 w-12 text-laundry-green mx-auto mb-4 float-animation-delayed" />
+                     <div className="absolute inset-0 pulse-glow rounded-full"></div>
+                   </div>
+                   <Heading variant="card" size="xl" className="mb-2">
+                     Express Service
+                   </Heading>
+                   <p className="text-gray-600">
+                     Need it fast? Our express service gets your clothes back in 24 hours.
+                   </p>
+                 </CardContent>
+               </Card>
+             </AnimatedSection>
+             
+             <AnimatedSection animationType="slide-in-right" delay={600}>
+               <Card variant="feature-card" className="card-hover">
+                 <CardContent className="text-center p-6">
+                   <div className="relative">
+                     <Icon icon={Shield} className="h-12 w-12 text-laundry-orange mx-auto mb-4 float-animation" />
+                     <div className="absolute inset-0 pulse-glow rounded-full"></div>
+                   </div>
+                   <Heading variant="card" size="xl" className="mb-2">
+                     Quality Guarantee
+                   </Heading>
+                   <p className="text-gray-600">
+                     100% satisfaction guaranteed. We treat your clothes like our own.
+                   </p>
+                 </CardContent>
+               </Card>
+             </AnimatedSection>
+           </div>
+         </Container>
+       </AnimatedSection>
 
-      {/* Services Showcase Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-
-
-        <Container variant="page">
-          <div className="text-center mb-16">
-            <Badge variant="service-tag" className="mb-4">
-              Professional Care
-            </Badge>
-            <Heading variant="section" size="4xl" className="mb-6">
-              Our Premium Services
-            </Heading>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              From delicate dry cleaning to express laundry service, we provide comprehensive care for all your clothing needs. 
-              Quality guaranteed, delivered to your door.
-            </p>
-          </div>
+             {/* Services Showcase Section */}
+       <AnimatedSection animationType="fade-in" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+         <Container variant="page">
+           <div className="text-center mb-16">
+             <Badge variant="service-tag" className="mb-4 bounce-animation">
+               Best Value
+             </Badge>
+             <Heading variant="section" size="4xl" className="mb-6 text-reveal">
+               Save with Package Deals
+             </Heading>
+             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed text-reveal-delayed">
+               Bundle your laundry needs and save money with our package deals. 
+               Quality guaranteed, delivered to your door.
+             </p>
+           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {/* Dry Cleaning Service */}
+            {/* Everyday Laundry Bundle */}
             <Card variant="service-card" className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <CardContent className="p-8">
-                <div className="flex items-center mb-6">
-                  <div className="p-3 bg-laundry-blue/10 rounded-xl mr-4">
-                    <Icon icon={ShirtIcon} className="h-10 w-10 text-laundry-blue" />
-                  </div>
+                                 <div className="flex items-center mb-6">
+                   <div className="p-3 bg-laundry-blue/10 rounded-xl mr-4">
+                     <div className="w-10 h-10">
+                       <img 
+                         src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" 
+                         alt="Laundry Service" 
+                         className="w-full h-full object-contain"
+                       />
+                     </div>
+                   </div>
                   <div>
                     <Heading variant="card" size="xl" className="mb-1">
-                      Dry Cleaning
+                      Everyday Laundry Bundle
                     </Heading>
                     <Badge variant="premium" className="text-xs">
-                      Premium Service
-                    </Badge>
-                  </div>
-                </div>
-                
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  Professional dry cleaning for delicate fabrics, formal wear, and specialty items. 
-                  Using eco-friendly solvents and expert techniques to preserve your garments.
-                </p>
-                
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center text-sm text-gray-600">
-                    <Icon icon={Shield} className="h-4 w-4 text-laundry-green mr-2" />
-                    <span>Delicate fabric care</span>
-                  </div>
-                  <div className="flex items-center text-sm text-gray-600">
-                    <Icon icon={Leaf} className="h-4 w-4 text-laundry-green mr-2" />
-                    <span>Eco-friendly solvents</span>
-                  </div>
-                  <div className="flex items-center text-sm text-gray-600">
-                    <Icon icon={Star} className="h-4 w-4 text-laundry-green mr-2" />
-                    <span>Expert finishing</span>
-                  </div>
-                </div>
-                
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="text-2xl font-bold text-laundry-blue">$15</span>
-                    <span className="text-gray-500 ml-1">per item</span>
-                  </div>
-                  <Button variant="laundry-outline" size="sm">
-                    Learn More
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-            
-            {/* Laundry Service */}
-            <Card variant="service-card" className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <CardContent className="p-8">
-                <div className="flex items-center mb-6">
-                  <div className="p-3 bg-laundry-green/10 rounded-xl mr-4">
-                    <Icon icon={Sparkles} className="h-10 w-10 text-laundry-green" />
-                  </div>
-                  <div>
-                    <Heading variant="card" size="xl" className="mb-1">
-                      Laundry Service
-                    </Heading>
-                    <Badge variant="express" className="text-xs">
                       Most Popular
                     </Badge>
                   </div>
@@ -259,7 +241,7 @@ export default function Home() {
                 
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   Complete wash, dry, and fold service for everyday clothing and household linens. 
-                  Fresh, clean, and perfectly folded for your convenience.
+                  Perfect for families and busy professionals.
                 </p>
                 
                 <div className="space-y-3 mb-6">
@@ -269,18 +251,18 @@ export default function Home() {
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
                     <Icon icon={Leaf} className="h-4 w-4 text-laundry-green mr-2" />
-                    <span>Gentle detergents</span>
+                    <span>5kg minimum</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
                     <Icon icon={Star} className="h-4 w-4 text-laundry-green mr-2" />
-                    <span>Perfect folding</span>
+                    <span>Extra kg +$5.50</span>
                   </div>
                 </div>
                 
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-2xl font-bold text-laundry-green">$25</span>
-                    <span className="text-gray-500 ml-1">per load</span>
+                    <span className="text-2xl font-bold text-laundry-blue">$30</span>
+                    <span className="text-gray-500 ml-1">per 5kg</span>
                   </div>
                   <Button variant="laundry-outline" size="sm">
                     Learn More
@@ -289,47 +271,96 @@ export default function Home() {
               </CardContent>
             </Card>
             
-            {/* Ironing Service */}
+            {/* Work Week Special Bundle */}
             <Card variant="service-card" className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
-                  <div className="p-3 bg-laundry-orange/10 rounded-xl mr-4">
-                    <Icon icon={Star} className="h-10 w-10 text-laundry-orange" />
+                  <div className="p-3 bg-laundry-green/10 rounded-xl mr-4">
+                    <Icon icon={Briefcase} className="h-10 w-10 text-laundry-green" />
                   </div>
                   <div>
                     <Heading variant="card" size="xl" className="mb-1">
-                      Ironing Service
+                      Work Week Special Bundle
                     </Heading>
-                    <Badge variant="service-tag" className="text-xs">
-                      Professional
+                    <Badge variant="express" className="text-xs">
+                      Best Value
                     </Badge>
                   </div>
                 </div>
                 
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Professional pressing and ironing for crisp, wrinkle-free clothes. 
-                  Perfect for business attire, formal wear, and everyday clothing.
+                  5kg wash, dry, fold + 5 work shirts ironed. 
+                  Perfect for professionals who need crisp, clean work attire.
                 </p>
                 
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center text-sm text-gray-600">
                     <Icon icon={Shield} className="h-4 w-4 text-laundry-green mr-2" />
-                    <span>Expert pressing</span>
+                    <span>5kg wash, dry & fold</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
                     <Icon icon={Leaf} className="h-4 w-4 text-laundry-green mr-2" />
-                    <span>Steam treatment</span>
+                    <span>5 work shirts ironed</span>
                   </div>
                   <div className="flex items-center text-sm text-gray-600">
                     <Icon icon={Star} className="h-4 w-4 text-laundry-green mr-2" />
-                    <span>Crisp finish</span>
+                    <span>Professional finish</span>
                   </div>
                 </div>
                 
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-2xl font-bold text-laundry-orange">$10</span>
-                    <span className="text-gray-500 ml-1">per item</span>
+                    <span className="text-2xl font-bold text-laundry-green">$42</span>
+                    <span className="text-gray-500 ml-1">bundle</span>
+                  </div>
+                  <Button variant="laundry-outline" size="sm">
+                    Learn More
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+            
+            {/* Bedding Refresh Bundle */}
+            <Card variant="service-card" className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <CardContent className="p-8">
+                <div className="flex items-center mb-6">
+                  <div className="p-3 bg-laundry-orange/10 rounded-xl mr-4">
+                    <Icon icon={Bed} className="h-10 w-10 text-laundry-orange" />
+                  </div>
+                  <div>
+                    <Heading variant="card" size="xl" className="mb-1">
+                      Bedding Refresh Bundle
+                    </Heading>
+                    <Badge variant="service-tag" className="text-xs">
+                      Fresh & Clean
+                    </Badge>
+                  </div>
+                </div>
+                
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Washing, drying, and folding for 2 sets of bedding. 
+                  Keep your bedroom fresh and comfortable with clean linens.
+                </p>
+                
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Icon icon={Shield} className="h-4 w-4 text-laundry-green mr-2" />
+                    <span>2 sets of bedding</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Icon icon={Leaf} className="h-4 w-4 text-laundry-green mr-2" />
+                    <span>Wash, dry & fold</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Icon icon={Star} className="h-4 w-4 text-laundry-green mr-2" />
+                    <span>Fresh & hygienic</span>
+                  </div>
+                </div>
+                
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="text-2xl font-bold text-laundry-orange">$35</span>
+                    <span className="text-gray-500 ml-1">per 2 sets</span>
                   </div>
                   <Button variant="laundry-outline" size="sm">
                     Learn More
@@ -355,47 +386,7 @@ export default function Home() {
               <Badge variant="express">From $35</Badge>
             </Card>
             
-            {/* Curtain Cleaning */}
-            <Card variant="feature-card" className="text-center p-6">
-              <div className="p-3 bg-laundry-purple/10 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Icon icon={Sparkles} className="h-8 w-8 text-laundry-purple" />
-              </div>
-              <Heading variant="card" size="lg" className="mb-2">
-                Curtain Cleaning
-              </Heading>
-              <p className="text-gray-600 mb-3 text-sm">
-                Professional curtain and drape cleaning
-              </p>
-              <Badge variant="service-tag">From $45</Badge>
-            </Card>
-            
-            {/* Rug Cleaning */}
-            <Card variant="feature-card" className="text-center p-6">
-              <div className="p-3 bg-laundry-yellow/10 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Icon icon={Shield} className="h-8 w-8 text-laundry-yellow" />
-              </div>
-              <Heading variant="card" size="lg" className="mb-2">
-                Rug Cleaning
-              </Heading>
-              <p className="text-gray-600 mb-3 text-sm">
-                Deep cleaning for carpets and rugs
-              </p>
-              <Badge variant="service-tag">From $60</Badge>
-            </Card>
-            
-            {/* Wedding Dress */}
-            <Card variant="feature-card" className="text-center p-6">
-              <div className="p-3 bg-laundry-red/10 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Icon icon={Star} className="h-8 w-8 text-laundry-red" />
-              </div>
-              <Heading variant="card" size="lg" className="mb-2">
-                Wedding Dress
-              </Heading>
-              <p className="text-gray-600 mb-3 text-sm">
-                Specialized wedding dress preservation
-              </p>
-              <Badge variant="premium">From $120</Badge>
-            </Card>
+
           </div>
           
           {/* CTA Section */}
@@ -420,7 +411,7 @@ export default function Home() {
             </div>
           </div>
         </Container>
-      </section>
+       </AnimatedSection>
 
       {/* NDIS Laundry Services Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
@@ -573,7 +564,7 @@ export default function Home() {
                 ))}
               </div>
               <blockquote className="text-xl text-gray-700 italic mb-6">
-                "LaundryPro has been a lifesaver for our family. As NDIS participants, we need reliable, 
+                "Ultra Cleany Laundry has been a lifesaver for our family. As NDIS participants, we need reliable, 
                 understanding service providers, and they deliver exactly that. The pickup and delivery 
                 service makes managing our laundry so much easier."
               </blockquote>
@@ -603,7 +594,7 @@ export default function Home() {
               What Our Customers Say
             </Heading>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Don't just take our word for it. Here's what our satisfied customers have to say about their experience with LaundryPro.
+              Don't just take our word for it. Here's what our satisfied customers have to say about their experience with Ultra Cleany Laundry.
             </p>
           </div>
 
@@ -622,7 +613,7 @@ export default function Home() {
                   
                   {/* Testimonial Text */}
                   <blockquote className="text-gray-700 mb-6 leading-relaxed italic">
-                    "LaundryPro has completely transformed my laundry experience! The pickup and delivery service is incredibly convenient, and my clothes have never looked better. The express service saved me when I needed a suit cleaned for an important meeting."
+                    "Ultra Cleany Laundry has completely transformed my laundry experience! The pickup and delivery service is incredibly convenient, and my clothes have never looked better. The express service saved me when I needed a suit cleaned for an important meeting."
                   </blockquote>
                   
                   {/* Customer Info */}
@@ -651,7 +642,7 @@ export default function Home() {
                   
                   {/* Testimonial Text */}
                   <blockquote className="text-gray-700 mb-6 leading-relaxed italic">
-                    "I was skeptical about dry cleaning delivery, but LaundryPro exceeded all my expectations. My wedding dress cleaning was absolutely perfect, and the eco-friendly approach gives me peace of mind. Highly recommend!"
+                    "I was skeptical about laundry delivery, but Ultra Cleany Laundry exceeded all my expectations. The quality is outstanding, and the eco-friendly approach gives me peace of mind. Highly recommend!"
                   </blockquote>
                   
                   {/* Customer Info */}
@@ -661,7 +652,7 @@ export default function Home() {
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">Emma Johnson</div>
-                      <div className="text-sm text-gray-600">Bride</div>
+                      <div className="text-sm text-gray-600">Customer</div>
                       <div className="text-xs text-laundry-blue">Verified Customer</div>
                     </div>
                   </div>
@@ -680,7 +671,7 @@ export default function Home() {
                   
                   {/* Testimonial Text */}
                   <blockquote className="text-gray-700 mb-6 leading-relaxed italic">
-                    "As a busy parent, I don't have time for laundry. LaundryPro's service is a game-changer! The quality is outstanding, prices are fair, and the team is always professional. My kids' school uniforms look brand new every week."
+                    "As a busy parent, I don't have time for laundry. Ultra Cleany Laundry's service is a game-changer! The quality is outstanding, prices are fair, and the team is always professional. My kids' school uniforms look brand new every week."
                   </blockquote>
                   
                   {/* Customer Info */}
@@ -714,7 +705,7 @@ export default function Home() {
                 <div className="text-center">
                   <div className="text-3xl font-bold text-laundry-green mb-2">10,000+</div>
                   <div className="text-gray-600">Happy Customers</div>
-                  <div className="text-sm text-gray-500 mt-1">Across Sydney</div>
+                  <div className="text-sm text-gray-500 mt-1">Across Melbourne</div>
                 </div>
                 
                 <div className="text-center">
@@ -753,10 +744,10 @@ export default function Home() {
         <Container variant="page">
           <div className="text-center mb-16">
             <Badge variant="service-tag" className="mb-4">
-              Why LaundryPro?
+              Why Ultra Cleany Laundry?
             </Badge>
             <Heading variant="section" size="4xl" className="mb-6">
-              Why Choose LaundryPro?
+              Why Choose Ultra Cleany Laundry?
             </Heading>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               We're not just another laundry service. We're your trusted partner in garment care, 
@@ -989,7 +980,7 @@ export default function Home() {
               Ready to Experience the Difference?
             </Heading>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Join thousands of satisfied customers who trust LaundryPro for their garment care needs.
+              Join thousands of satisfied customers who trust Ultra Cleany Laundry for their garment care needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/book?first-time=true">
