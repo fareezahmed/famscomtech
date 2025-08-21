@@ -1,16 +1,13 @@
 {
   "laundry": {
-    "washing-machine": "https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif",
-    "clothes-hanging": "https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif",
-    "ironing": "https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif",
-    "detergent": "https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif"
+    "washing-machine": "/icons/washing-machine-animation.gif",
+    "clothes-packing": "/icons/clothes-packing.gif",
+    "ironing": "/icons/ironing-animation.gif",
+    "detergent": "/icons/detergent-animation.gif",
+    "tshirt-drying": "/icons/tshirt-drying-animation.gif",
+    "pile-of-towels": "/icons/pile-of-towels-animation.gif"
   },
   "delivery": {
-    "truck": "https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif",
-    "pickup": "https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif"
-  },
-  "quality": {
-    "star": "https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif",
-    "shield": "https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif"
+    "truck": "/icons/delivery-truck.gif"
   }
 }
