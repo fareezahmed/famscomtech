@@ -15,11 +15,9 @@ const navigation = [
     href: "/services",
     dropdown: [
       { name: "Laundry", href: "/services/laundry" },
-      { name: "Dry Cleaning", href: "/services/dry-cleaning" },
       { name: "Ironing", href: "/services/ironing" },
       { name: "Pricing", href: "/pricing" },
-      { name: "Areas", href: "/areas" },
-      { name: "PWA", href: "/pwa" },
+  
     ]
   },
   { 
@@ -55,9 +53,9 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <span className="sr-only">Laundry Service</span>
-              <Icon icon={ShirtIcon} className="h-8 w-8 text-laundry-blue" />
-              <span className="text-xl font-bold text-gray-900">LaundryPro</span>
+              <span className="sr-only">Ultra Cleany Laundry</span>
+              <img src="/logo.svg" alt="Ultra Cleany Laundry Logo" className="h-8 w-8" />
+              <span className="text-xl font-bold text-gray-900">Ultra Cleany Laundry</span>
             </Link>
           </div>
 
@@ -129,9 +127,9 @@ export default function Header() {
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="sr-only">Laundry Service</span>
-            <Icon icon={ShirtIcon} className="h-8 w-8 text-laundry-blue" />
-            <span className="text-xl font-bold text-gray-900">LaundryPro</span>
+            <span className="sr-only">Ultra Cleany Laundry</span>
+            <img src="/logo.svg" alt="Ultra Cleany Laundry Logo" className="h-8 w-8" />
+            <span className="text-xl font-bold text-gray-900">Ultra Cleany Laundry</span>
           </Link>
         </div>
 
@@ -180,11 +178,11 @@ export default function Header() {
           <div className="flex items-center space-x-6 text-sm text-gray-600">
             <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4" />
-              <span>1300 123 456</span>
+              <span>(03) 9571 1494</span>
             </div>
             <div className="flex items-center space-x-2">
               <MapPin className="h-4 w-4" />
-              <span>Melbourne Area</span>
+              <span>Malvern East, VIC</span>
             </div>
           </div>
           <Link href="/book">
@@ -272,11 +270,11 @@ export default function Header() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-sm text-gray-600">
                 <Phone className="h-4 w-4" />
-                <span>1300 123 456</span>
+                <span>(03) 9571 1494</span>
               </div>
               <div className="flex items-center space-x-3 text-sm text-gray-600">
                 <MapPin className="h-4 w-4" />
-                <span>Melbourne Area</span>
+                <span>Malvern East, VIC</span>
               </div>
             </div>
             <Link href="/book" className="block">

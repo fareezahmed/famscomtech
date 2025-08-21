@@ -10,6 +10,18 @@ export { Icon, iconVariants } from "./icon"
 export { Container, containerVariants } from "./container"
 export { Heading, headingVariants } from "./heading"
 
+// Animated Icon Components
+export {
+  AnimatedIcon,
+  WashingMachineIcon,
+  ClothesPackingIcon,
+  IroningIcon,
+  DetergentIcon,
+  TshirtDryingIcon,
+  PileOfTowelsIcon,
+  DeliveryTruckIcon
+} from "./animated-icon"
+
 // Select Components
 export {
   Select,
