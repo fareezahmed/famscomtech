@@ -1,0 +1,16 @@
+{
+  "laundry": {
+    "washing-machine": "/icons/washing-machine.gif",
+    "clothes-hanging": "/icons/clothes-hanging.gif",
+    "ironing": "/icons/ironing.gif",
+    "detergent": "/icons/detergent.gif"
+  },
+  "delivery": {
+    "truck": "/icons/truck.gif",
+    "pickup": "/icons/pickup.gif"
+  },
+  "quality": {
+    "star": "/icons/star.gif",
+    "shield": "/icons/shield.gif"
+  }
+}
