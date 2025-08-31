@@ -1,10 +1,10 @@
-# Famscontech Website
+# Famscomtech pty Ltd Website
 
-A professional single-page website for Famscontech, a Network Infrastructure Construction Services company based in Australia.
+A professional single-page website for Famscomtech pty Ltd, a Network Infrastructure Construction Services company based in Australia.
 
-## About Famscontech
+## About Famscomtech pty Ltd
 
-Famscontech provides Network Infrastructure Construction Services specialising in:
+Famscomtech pty Ltd provides Network Infrastructure Construction Services specialising in:
 - Site surveys
 - Technology installation
 - Infrastructure augmentation
@@ -119,7 +119,7 @@ The website is configured for automatic deployment to GitHub Pages using GitHub 
 
 After deployment, your website will be available at:
 - **GitHub Pages**: `https://yourusername.github.io/famscomtech`
-- **Custom Domain**: `https://famscontech.com.au` (if configured)
+- **Custom Domain**: `https://famscomtech.com.au` (if configured)
 
 ## Customization
 
