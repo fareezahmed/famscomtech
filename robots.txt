@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://famscontech.com.au/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow specific files
+Disallow: /deploy.sh
+Disallow: /deploy.ps1
+Disallow: /deploy.bat
+Disallow: /.git/
+Disallow: /node_modules/
